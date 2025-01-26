@@ -1,0 +1,77 @@
+@import "tailwindcss";
+@layer theme, base, components, utilities;
+
+@theme {
+  --color-themColor: #6229cf;
+  --color-themColor2: #cc57fa;
+  --color-mainColor: #2D3350;
+  --color-darkColor: #090C1E;
+  --color-icon: #EFF1F4;
+  --gradient-primary: linear-gradient(30deg, #6229cf, #cc57fa);
+}
+@layer theme {
+  .gradient-primary {
+    background-image: linear-gradient(30deg, #6229cf, #cc57fa);
+  }
+}
+
+@font-face {
+  font-family: 'Centra';
+  src: url('./assest/fonts/CentraNo1-Medium-BF646c26904bcde.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+:root {
+  --body-background-color: #ffff;
+  --text-color-main: #2D3350;
+  --text-color-dark: #090C1E;
+  --tag-background-color: #EFF1F4;
+  --theme-color: #6229cf;
+  --gradient-color-one: var(--theme-color);
+  --gradient-color-two: #cc57fa;
+  --gradient-angle: 30deg;
+  --gradient-primary2: (var(--gradient-angle), var(--gradient-color-one), var(--gradient-color-two));
+  --gradient-primary: linear-gradient(var(--gradient-angle), var(--gradient-color-one), var(--gradient-color-two));
+  --logo-header-height: 80px;
+  --logo-footer-height: 80px;
+  --font-body: 'Centra', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  background-color: var(--body-background-color);
+  color: var(--text-color-main);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--text-color-dark);
+}
+svg {
+  fill: currentColor;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.btn {
+  display: inline-block;
+  white-space: nowrap;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 48px;
+  padding: 0 2rem;
+  color: #ffff;
+  background-image: var(--gradient-primary);
+  border: none;
+  transition: all .25s;
+  opacity: 1;
+}
+.btn:hover {
+  opacity: .85;
+  background-position: right center;
+}

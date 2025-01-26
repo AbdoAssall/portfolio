@@ -1,0 +1,50 @@
+.site-wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: clip;
+    position: relative;
+}
+.cover-bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 150vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-mask-image: linear-gradient(180deg, #000 80%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(180deg, #000 80%, rgba(0, 0, 0, 0) 100%);
+}
+.line-web {
+    fill: none;
+    position: absolute;
+    width: 140%;
+    stroke: var(--text-color-dark);
+    opacity: 0.05;
+}
+.flair-one {
+    width: 100vw;
+    aspect-ratio: 31 / 26;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .3;
+}
+.flair-two {
+    width: 100vw;
+    aspect-ratio: 85 / 73;
+    position: absolute;
+    right: -40vw;
+    top: 0;
+    opacity: .3;
+}
+.gradient-color-one {
+    stop-color: var(--gradient-color-one);
+}
+.gradient-color-two {
+    stop-color: var(--gradient-color-two);
+}
