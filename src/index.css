@@ -1,19 +1,21 @@
 @import "tailwindcss";
-@layer theme, base, components, utilities;
+/* @layer theme, base, components, utilities; */
 
 @theme {
   --color-themColor: #6229cf;
   --color-themColor2: #cc57fa;
   --color-mainColor: #2D3350;
   --color-darkColor: #090C1E;
+  --color-dark-100: #1a1f24;
   --color-icon: #EFF1F4;
+  --color-secondary: #8a8f84;
   --gradient-primary: linear-gradient(30deg, #6229cf, #cc57fa);
 }
-@layer theme {
+/* @layer theme {
   .gradient-primary {
     background-image: linear-gradient(30deg, #6229cf, #cc57fa);
   }
-}
+} */
 
 @font-face {
   font-family: 'Centra';
@@ -37,6 +39,17 @@
   --font-body: 'Centra', sans-serif;
 }
 
+:root[data-color-scheme=dark] {
+  --color-background-100: #1a1f24;
+  --color-background-200: #2a2f34;
+  --color-background-300: #3a3f44;
+  --color-background: #0d1217;
+  --color-secondary: #8a8f84;
+  --dropdown--background-color: #2a2f34;
+}
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: var(--font-body);
   font-weight: 400;
@@ -74,4 +87,13 @@ img {
 .btn:hover {
   opacity: .85;
   background-position: right center;
+}
+.slick-prev, .slick-next {
+  width: 30px !important;
+}
+.slick-prev:before, .slick-next:before {
+  font-size: 1.7rem !important;
+}
+.slick-dots li.slick-active button:before {
+  color: white !important;
 }
