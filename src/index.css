@@ -9,6 +9,7 @@
   --color-dark-100: #1a1f24;
   --color-icon: #EFF1F4;
   --color-secondary: #8a8f84;
+  --color-gray-250: #f3f3f3;
   --gradient-primary: linear-gradient(30deg, #6229cf, #cc57fa);
 }
 /* @layer theme {
@@ -92,8 +93,9 @@ img {
   width: 30px !important;
 }
 .slick-prev:before, .slick-next:before {
-  font-size: 1.7rem !important;
+  font-size: 1.8rem !important;
+  color: var(--text-color-dark) !important;
 }
-.slick-dots li.slick-active button:before {
+/* .slick-dots li.slick-active button:before {
   color: white !important;
-}
+} */

@@ -1,3 +1,7 @@
+.site-hero-right h1 {
+    background-image: var(--gradient-primary);
+    color: white;
+}
 .intro-title span {
     background-image: var(--gradient-primary);
     -webkit-background-clip: text;

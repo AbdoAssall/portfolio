@@ -1,169 +1,9 @@
-/* eslint-disable react/no-unescaped-entities */
-import { useState, useEffect } from 'react'
 import PropTypes from "prop-types";
-import '../../assest/style/navbar.css'
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { Link, NavLink } from 'react-router-dom';
-import { TiSocialLinkedin } from "react-icons/ti";
-import { IoLogoGithub } from "react-icons/io";
-import { IoLogoTwitter } from "react-icons/io";
-import { LuGithub } from "react-icons/lu";
+import Navbar from "../Navbar";
 
-
-const navigation = [
-  { name: 'Home', href: '/', current: true },
-  { name: 'About', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Skills', href: '#skills', current: false },
-]
-// const socialLinks = [
-//     { name: 'Linkedin', href: '#', current: false},
-//   ]
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
 const PageLayout = ({ children }) => {
-  const [navbarClass, setNavbarClass] = useState("")
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  const borderGradient = {
-    borderImageSlice: '1',
-    borderImageSource: 'linear-gradient(30deg, #6229cf, #cc57fa)'
-  }
-  const handelScroll = () => {
-    const currentScrollY = window.scrollY;
-
-    if (currentScrollY === 0) {
-      // Back at the top, show the original navbar
-      setNavbarClass("");
-    } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
-      // Scrolling down
-      setNavbarClass("scrolled hide");
-    } else {
-      // Scrolling up
-      setNavbarClass("scrolled show");
-    }
-
-    setLastScrollY(currentScrollY);
-  }
-
-  useEffect(() => {
-    window.addEventListener("scroll", handelScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handelScroll)
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lastScrollY]);
-
   return (
     <div className="site-wrap dark:bg-dark-100">
-      <Disclosure as="nav" className={`navbar ${navbarClass} bg-transparent`}>
-        <div className="mx-auto max-w-7xl sm:mt-4 px-2 sm:px-4">
-          <div className="relative flex h-16 items-center justify-between">
-            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-              {/* Mobile menu button*/}
-              <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-mainColor focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                <span className="absolute -inset-0.5" />
-                <span className="sr-only">Open main menu</span>
-                <Bars3Icon aria-hidden="true" className="block h-6 w-6 group-data-[open]:hidden" />
-                <XMarkIcon aria-hidden="true" className="hidden h-6 w-6 group-data-[open]:block" />
-              </DisclosureButton>
-            </div>
-            <div className="flex flex-1 items-center justify-end me-3 sm:items-stretch sm:justify-start">
-              <div className="flex flex-shrink-0 items-center pt-4 sm:pt-0">
-                <img
-                  alt="Your Company"
-                  src="./images/logo-light.png"
-                  className="w-auto max-h-11"
-                />
-              </div>
-              <div className="hidden sm:ml-6 sm:block">
-                <div className="flex md:space-x-10 space-x-3">
-                  {navigation.map((item) => (
-                    <NavLink
-                      key={item.name}
-                      to={item.href}
-                      aria-current={item.current ? 'page' : undefined}
-                      style={borderGradient}
-                      className={classNames(
-                        item.current ? 'text-themColor border-b' : 'text-darkColor hover:text-themColor transition-all duration-500',
-                        'px-0 pt-2 text-md font-medium',
-                      )}
-                    >
-                      {item.name}
-                    </NavLink>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className="absolute inset-y-0 right-0 flex items-center gap-3 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-              <Link
-                to="https://www.linkedin.com/in/abdelrahman-assal-798baa195"
-                className="soial-icons group relative rounded-full text-mainColor bg-icon p-2 text-center hidden sm:inline-block focus:outline-none"
-                target='blank'
-              >
-                <span className="absolute -inset-0 scale-0 rounded-full bg-linear-30 from-themColor to-themColor2 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all ease-in-out duration-300" />
-                <TiSocialLinkedin aria-hidden="true" className="h-6 w-6 relative group-hover:text-white transition-all ease-in-out duration-300" />
-              </Link>
-              <Link
-                to="https://github.com/AbdoAssall"
-                className="soial-icons group relative rounded-full text-mainColor bg-icon p-2 text-center hidden sm:inline-block focus:outline-none"
-                target='blank'
-              >
-                <span className="absolute -inset-0 scale-0 rounded-full bg-linear-30 from-themColor to-themColor2 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all ease-in-out duration-300" />
-                <IoLogoGithub aria-hidden="true" className="h-6 w-6 relative group-hover:text-white transition-all ease-in-out duration-300" />
-              </Link>
-              <Link
-                to="https://twitter.com/abdoassal83"
-                className="soial-icons group relative rounded-full text-mainColor bg-icon p-2 text-center hidden sm:inline-block focus:outline-none"
-                target='blank'
-              >
-                <span className="absolute -inset-0 scale-0 rounded-full  bg-linear-30 from-themColor to-themColor2 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all ease-in-out duration-300" />
-                <IoLogoTwitter aria-hidden="true" className="h-6 w-6 relative group-hover:text-white transition-all ease-in-out duration-300" />
-              </Link>
-
-              {/* Profile dropdown */}
-              <button className='group relative bg-transparent hidden sm:inline-block md:text-lg border-2 px-5 py-2 lg:px-6 lg:py-3 text-center transition-all ease-in-out duration-300' style={borderGradient}>
-                <span className="absolute start-0 top-0 h-full w-0  bg-linear-30 from-themColor to-themColor2 group-hover:w-full transition-all ease-in-out duration-300" />
-                <span className='group-hover:text-white relative transition-all ease-in-out duration-300'>Let's Connect</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <DisclosurePanel className="sm:hidden">
-          <div className="space-y-1 px-2 pb-3 pt-2">
-            {navigation.map((item) => (
-              <DisclosureButton
-                key={item.name}
-                as="a"
-                href={item.href}
-                aria-current={item.current ? 'page' : undefined}
-                className={classNames(
-                  item.current ? 'bg-themColor text-white' : 'text-darkColor hover:bg-icon',
-                  'block rounded-md px-3 py-2 text-base font-medium',
-                )}
-              >
-                {item.name}
-              </DisclosureButton>
-            ))}
-            <Link
-              to="https://github.com/AbdoAssall"
-              className='inline-block bg-linear-30 from-themColor to-themColor2 text-white text-lg ml-2 px-7 py-2 text-center rounded-md hover:opacity-90'
-              style={{ marginBottom: 22 }}>
-              <LuGithub className='w-5 h-5' />
-            </Link>
-            <button className='group relative bg-transparent sm:text-md md:text-lg border-2 px-5 py-2 lg:px-6 lg:py-3 w-full text-center transition-all ease-in-out duration-300' style={borderGradient}>
-              <span className="absolute start-0 top-0 h-full w-0 bg-linear-30 from-themColor to-themColor2 group-hover:w-full transition-all ease-in-out duration-300" />
-              <span className='group-hover:text-white relative transition-all ease-in-out duration-300'>Let's Connect</span>
-            </button>
-          </div>
-        </DisclosurePanel>
-      </Disclosure>
-
       <div className='cover-bg'>
         <svg className="line-web" preserveAspectRatio="xMinYMin slice" viewBox="0 0 2188 2183" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path opacity="0.94" d="M1087.09 12.0266C1105.45 12.4548 1123.8 14.9802 1142.09 19.4218C1160.38 25.0388 1178.64 31.8851 1196.88 39.4906C1215.13 47.024 1233.37 54.4306 1251.58 61.3124C1269.84 66.9833 1288.1 71.6598 1306.35 75.2691C1324.64 77.3963 1342.93 78.6554 1361.18 79.2632C1379.49 79.0758 1397.77 78.9245 1415.99 79.1884C1434.25 79.7419 1452.42 81.3796 1470.53 84.3546C1488.62 88.4506 1506.59 94.1727 1524.43 101.521C1542.24 110.08 1559.87 120.102 1577.29 131.316C1594.63 143.215 1611.73 155.818 1628.53 168.833C1645.2 181.702 1661.51 194.495 1677.44 206.958C1693.15 218.66 1708.4 229.778 1723.16 240.276C1737.59 249.813 1751.47 258.747 1764.75 267.222C1777.65 274.971 1789.86 282.495 1801.39 289.994C1812.53 297.235 1822.95 304.795 1832.61 312.798C1841.95 321.033 1850.55 329.984 1858.49 339.724C1866.16 349.985 1873.25 361.144 1879.8 373.201C1886.28 385.855 1892.37 399.336 1898.17 413.609C1904.14 428.355 1910.02 443.769 1915.87 459.707C1922.19 475.939 1928.7 492.534 1935.48 509.44C1943 526.39 1950.96 543.526 1959.4 560.72C1968.73 577.852 1978.64 594.99 1989.1 612.097C2000.42 629.015 2012.27 645.902 2024.55 662.739C2037.46 679.366 2050.63 695.941 2063.89 712.499C2077.37 728.879 2090.64 745.256 2103.49 761.647C2116.03 777.909 2127.79 794.216 2138.55 810.621C2148.49 826.91 2157.1 843.328 2164.21 859.876C2170.13 876.339 2174.36 892.983 2176.88 909.79C2178.07 926.547 2177.59 943.503 2175.43 960.641C2172.25 977.767 2167.69 995.078 2161.91 1012.61C2155.69 1030.14 2148.7 1047.88 2141.24 1065.83C2134.05 1083.78 2126.89 1101.95 2120.01 1120.32C2114.13 1138.7 2109 1157.09 2104.77 1175.46C2101.92 1193.82 2100.07 1212.17 2099.23 1230.48C2099.74 1248.78 2101.1 1267.02 2103.13 1285.2C2106.17 1303.37 2109.52 1321.45 2112.98 1339.41C2116.84 1357.31 2120.34 1375.11 2123.32 1392.71C2126.01 1410.25 2127.74 1427.6 2128.37 1444.72C2128.21 1461.73 2126.67 1478.48 2123.69 1494.94C2119.65 1511.28 2114.09 1527.28 2107.03 1542.93C2098.93 1558.45 2089.44 1573.58 2078.67 1588.33C2067.05 1602.93 2054.4 1617.13 2040.84 1630.93C2026.82 1644.64 2012.18 1657.95 1997.07 1670.92C1981.88 1683.85 1966.52 1696.49 1951.08 1708.85C1935.92 1721.29 1920.89 1733.55 1906.07 1745.66C1891.75 1757.98 1877.77 1770.26 1864.11 1782.54C1851.08 1795.11 1838.42 1807.76 1826.09 1820.47C1814.38 1833.55 1802.96 1846.72 1791.79 1859.93C1781.1 1873.43 1770.58 1886.92 1760.13 1900.32C1750.04 1913.81 1739.93 1927.07 1729.72 1939.96C1719.73 1952.69 1709.53 1964.9 1699.1 1976.47C1688.73 1987.63 1678.02 1998.02 1666.96 2007.6C1655.87 2016.67 1644.35 2024.9 1632.4 2032.32C1620.33 2039.35 1607.82 2045.75 1594.83 2051.56C1581.7 2057.35 1568.11 2062.83 1554.06 2068.13C1539.86 2073.78 1525.21 2079.51 1510.14 2085.39C1494.93 2091.86 1479.31 2098.57 1463.34 2105.47C1447.24 2112.9 1430.8 2120.37 1414.06 2127.76C1397.22 2135.25 1380.13 2142.33 1362.76 2148.79C1345.35 2154.88 1327.72 2160.03 1309.88 2164.15C1292.04 2167.57 1274 2169.9 1255.81 2171.1C1237.62 2171.76 1219.27 2171.55 1200.8 2170.65C1182.31 2169.69 1163.7 2168.47 1144.98 2167.13C1126.25 2166.34 1107.42 2165.74 1088.47 2165.45C1069.51 2165.9 1050.68 2166.61 1031.98 2167.41C1013.27 2168.66 994.685 2169.64 976.254 2170.19C957.806 2170.55 939.512 2170.07 921.372 2168.63C903.204 2166.54 885.21 2163.32 867.355 2158.99C849.489 2153.99 831.759 2148.05 814.201 2141.29C796.627 2134.28 779.185 2126.8 761.909 2119.02C744.63 2111.51 727.478 2104.03 710.486 2096.67C693.489 2089.91 676.67 2083.37 660.011 2077.06C643.346 2071.32 626.861 2065.67 610.593 2060C594.323 2054.57 578.29 2048.86 562.479 2042.75C546.706 2036.45 531.175 2029.53 515.923 2021.84C500.73 2013.73 485.817 2004.77 471.203 1994.96C456.666 1984.64 442.446 1973.53 428.54 1961.72C414.71 1949.57 401.211 1936.88 388.061 1923.74C374.984 1910.51 362.235 1897.05 349.813 1883.43C337.443 1869.99 325.399 1856.54 313.68 1843.13C301.994 1830.06 290.596 1817.04 279.487 1804.14C268.373 1791.6 257.53 1779.12 246.959 1766.66C236.329 1754.49 225.954 1742.24 215.833 1729.91C205.638 1717.73 195.698 1705.35 185.996 1692.71C176.222 1680.12 166.703 1667.19 157.46 1653.93C148.164 1640.58 139.179 1626.84 130.523 1612.71C121.869 1598.44 113.582 1583.76 105.714 1568.71C97.9017 1553.49 90.5277 1537.9 83.6455 1521.97C76.8917 1505.88 70.6293 1489.48 64.9306 1472.79C59.3595 1456 54.352 1438.94 49.8711 1421.66C45.5537 1404.31 41.7446 1386.76 38.4438 1369.04C35.2339 1351.27 32.4776 1333.36 30.1564 1315.34C27.8174 1297.29 25.8413 1279.13 24.2096 1260.89C22.4333 1242.64 20.947 1224.33 19.7145 1205.96C18.3013 1187.57 17.1055 1169.15 16.1449 1150.72C14.9675 1132.26 14.0435 1113.79 13.4088 1095.32C12.6115 1076.83 12.1733 1058.58 12.1305 1040.55C12.0336 1022.52 12.4225 1004.72 13.2968 987.168C14.2437 969.602 15.7847 952.277 17.9016 935.211C20.1813 918.129 23.0736 901.271 26.5961 884.654C30.2813 868.039 34.5972 851.629 39.4896 835.425C44.527 819.185 50.1231 803.115 56.2055 787.23C62.3793 771.256 69.0037 755.413 76.0247 739.683C83.0292 723.808 90.3945 708.009 98.0851 692.232C105.705 676.273 113.597 660.299 121.742 644.291C129.799 628.047 138.11 611.752 146.657 595.369C155.098 578.767 163.81 562.115 172.759 545.392C181.672 528.525 190.857 511.66 200.33 494.889C209.786 478.081 219.565 461.458 229.684 445.145C239.82 429.014 250.33 413.32 261.178 398.209C272.076 383.514 283.345 369.565 294.986 356.414C306.675 343.862 318.733 332.199 331.144 321.498C343.602 311.394 356.394 302.18 369.52 293.801C382.661 285.802 396.121 278.421 409.865 271.532C423.609 264.552 437.624 257.719 451.873 250.853C466.13 243.391 480.607 235.55 495.306 227.206C509.98 217.939 524.859 208.006 539.926 197.441C554.93 185.99 570.138 174.053 585.493 161.846C600.798 149.277 616.264 136.872 631.906 124.958C647.453 113.476 663.151 103.027 679.017 93.8812C694.78 85.8556 710.706 79.4411 726.778 74.7097C742.782 71.1891 758.933 69.189 775.25 68.5107C791.507 68.4104 807.938 68.999 824.546 69.933C841.123 70.3424 857.885 70.3377 874.818 69.6116C891.747 67.5293 908.887 64.3642 926.201 60.1342C943.529 54.5119 961.047 48.1321 978.749 41.3565C996.457 34.1289 1014.34 27.3552 1032.39 21.4874C1050.44 16.5236 1068.66 13.2796 1087.07 12.0264" strokeWidth="2" strokeLinecap="round" strokeDasharray="3 5"></path>
@@ -214,6 +54,8 @@ const PageLayout = ({ children }) => {
           </defs>
         </svg>
       </div>
+
+      <Navbar />
       <main>{children}</main>
     </div>
   )
