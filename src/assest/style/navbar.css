@@ -4,7 +4,6 @@
     left: 0;
     right: 0;
     z-index: 10;
-    margin-bottom: 64px;
 }
 .navbar.scrolled {
     position: fixed;

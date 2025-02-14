@@ -1,13 +1,14 @@
 import PageLayout from './layouts/PageLayout';
 import Main from './Header';
 import Skills from './Skills';
-// import '../assest/style/home.css'
+import Projects from './Projects';
 
 const Home = () => {
   return (
     <PageLayout>
       <Main />
       <Skills />
+      <Projects />
     </PageLayout>
   )
 }

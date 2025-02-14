@@ -13,7 +13,7 @@ import { LuGithub } from "react-icons/lu";
 const navigation = [
     { name: 'Home', href: '/', current: true },
     { name: 'About', href: '#', current: false },
-    { name: 'Projects', href: '#', current: false },
+    { name: 'Projects', href: '#projects', current: false },
     { name: 'Skills', href: '#skills', current: false },
 ]
 // const socialLinks = [
@@ -58,12 +58,12 @@ const Navbar = () => {
     }, [handelScroll]);
 
     return (
-        <Disclosure as="nav" className={`navbar ${navbarClass} bg-transparent`}>
+        <Disclosure as="nav" className={`navbar ${navbarClass} bg-transparent mb-0 sm:mb-16`}>
             <div className="mx-auto max-w-7xl sm:mt-4 px-2 sm:px-4">
                 <div className="relative flex h-16 items-center justify-between">
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                         {/* Mobile menu button*/}
-                        <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-mainColor focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                        <DisclosureButton className="group relative cursor-pointer inline-flex items-center justify-center rounded-md p-2 text-mainColor focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                             <span className="absolute -inset-0.5" />
                             <span className="sr-only">Open main menu</span>
                             <Bars3Icon aria-hidden="true" className="block h-6 w-6 group-data-[open]:hidden" />
