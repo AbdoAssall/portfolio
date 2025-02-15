@@ -11,7 +11,7 @@ import { IoArrowForwardCircleOutline } from "react-icons/io5";
 const Main = () => {
     return (
         <div className='py-6 block px-1 sm:flex-grow'>
-            <div className='site-hero mt-4 mb-24'>
+            <div className='site-hero my-4 lg:mb-24'>
                 <div className='container md:mx-auto px-4 lg:px-4'>
                     <div className='hero-tow-column flex flex-wrap sm:flex-col lg:flex-row gap-9 items-center'>
                         <div className='site-hero-right flex-grow flex-shrink-0 basis-full sm:basis-1/2 sm:max-w-xl md:max-w-2xl lg:max-w-4xl'>
@@ -33,13 +33,13 @@ const Main = () => {
                                     </span>
                                 </p>
                             </div>
-                            <p className='text-xl max-w-2xl mt-5 mb-6 sm:mb-8'>A full stack web developer who is passionate about creating
+                            <p className='text-xl max-w-2xl mt-5 mb-6 md:mb-8'>A full stack web developer who is passionate about creating
                                 beautiful,  functional and responsive websites 🚀
                             </p>
-                            <div className="mb-8 sm:mb-0 flex items-center gap-3">
+                            <div className="mb-8 md:mb-0 flex items-center gap-3">
                                 <Link
                                     to="https://www.linkedin.com/in/abdelrahman-assal-798baa195"
-                                    className="soial-icons group relative rounded-full text-mainColor bg-icon p-1 text-center inline-block sm:hidden focus:outline-none"
+                                    className="soial-icons group relative rounded-full text-mainColor bg-icon p-1 text-center inline-block md:hidden focus:outline-none"
                                     target='blank'
                                 >
                                     <span className="absolute -inset-0 scale-0 rounded-full bg-linear-30 from-themColor to-themColor2 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all ease-in-out duration-300" />
@@ -47,7 +47,7 @@ const Main = () => {
                                 </Link>
                                 <Link
                                     to="https://github.com/AbdoAssall"
-                                    className="soial-icons group relative rounded-full text-mainColor bg-icon p-1 text-center inline-block sm:hidden focus:outline-none"
+                                    className="soial-icons group relative rounded-full text-mainColor bg-icon p-1 text-center inline-block md:hidden focus:outline-none"
                                     target='blank'
                                 >
                                     <span className="absolute -inset-0 scale-0 rounded-full bg-linear-30 from-themColor to-themColor2 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all ease-in-out duration-300" />
@@ -55,7 +55,7 @@ const Main = () => {
                                 </Link>
                                 <Link
                                     to="https://twitter.com/abdoassal83"
-                                    className="soial-icons group relative rounded-full text-mainColor bg-icon p-1 text-center inline-block sm:hidden focus:outline-none"
+                                    className="soial-icons group relative rounded-full text-mainColor bg-icon p-1 text-center inline-block md:hidden focus:outline-none"
                                     target='blank'
                                 >
                                     <span className="absolute -inset-0 scale-0 rounded-full  bg-linear-30 from-themColor to-themColor2 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all ease-in-out duration-300" />

@@ -58,10 +58,10 @@ const Navbar = () => {
     }, [handelScroll]);
 
     return (
-        <Disclosure as="nav" className={`navbar ${navbarClass} bg-transparent mb-0 sm:mb-16`}>
-            <div className="mx-auto max-w-7xl sm:mt-4 px-2 sm:px-4">
+        <Disclosure as="nav" className={`navbar ${navbarClass} bg-transparent mb-0 md:mb-16`}>
+            <div className="mx-auto max-w-7xl md:mt-4 px-2 sm:px-4">
                 <div className="relative flex h-16 items-center justify-between">
-                    <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                    <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
                         {/* Mobile menu button*/}
                         <DisclosureButton className="group relative cursor-pointer inline-flex items-center justify-center rounded-md p-2 text-mainColor focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                             <span className="absolute -inset-0.5" />
@@ -70,15 +70,15 @@ const Navbar = () => {
                             <XMarkIcon aria-hidden="true" className="hidden h-6 w-6 group-data-[open]:block" />
                         </DisclosureButton>
                     </div>
-                    <div className="flex flex-1 items-center justify-end me-3 sm:items-stretch sm:justify-start">
-                        <div className="flex flex-shrink-0 items-center pt-4 sm:pt-0">
+                    <div className="flex flex-1 items-center justify-end me-3 md:items-stretch md:justify-start">
+                        <div className="flex flex-shrink-0 items-center pt-1 md:pt-0">
                             <img
                                 alt="Your Company"
                                 src="./images/logo-light.png"
                                 className="w-auto max-h-11"
                             />
                         </div>
-                        <div className="hidden sm:ml-6 sm:block">
+                        <div className="hidden md:ml-6 md:block">
                             <div className="flex md:space-x-10 space-x-3">
                                 {navigation.map((item) => (
                                     <NavLink
@@ -97,10 +97,10 @@ const Navbar = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="absolute inset-y-0 right-0 flex items-center gap-3 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                    <div className="absolute inset-y-0 right-0 hidden md:flex items-center gap-3 pr-2 sm:static md:inset-auto md:ml-6 md:pr-0">
                         <Link
                             to="https://www.linkedin.com/in/abdelrahman-assal-798baa195"
-                            className="soial-icons group relative rounded-full text-mainColor bg-icon p-2 text-center hidden sm:inline-block focus:outline-none"
+                            className="soial-icons group relative rounded-full text-mainColor bg-icon p-2 text-center hidden md:inline-block focus:outline-none"
                             target='blank'
                         >
                             <span className="absolute -inset-0 scale-0 rounded-full bg-linear-30 from-themColor to-themColor2 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all ease-in-out duration-300" />
@@ -108,7 +108,7 @@ const Navbar = () => {
                         </Link>
                         <Link
                             to="https://github.com/AbdoAssall"
-                            className="soial-icons group relative rounded-full text-mainColor bg-icon p-2 text-center hidden sm:inline-block focus:outline-none"
+                            className="soial-icons group relative rounded-full text-mainColor bg-icon p-2 text-center hidden md:inline-block focus:outline-none"
                             target='blank'
                         >
                             <span className="absolute -inset-0 scale-0 rounded-full bg-linear-30 from-themColor to-themColor2 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all ease-in-out duration-300" />
@@ -116,7 +116,7 @@ const Navbar = () => {
                         </Link>
                         <Link
                             to="https://twitter.com/abdoassal83"
-                            className="soial-icons group relative rounded-full text-mainColor bg-icon p-2 text-center hidden sm:inline-block focus:outline-none"
+                            className="soial-icons group relative rounded-full text-mainColor bg-icon p-2 text-center hidden md:inline-block focus:outline-none"
                             target='blank'
                         >
                             <span className="absolute -inset-0 scale-0 rounded-full  bg-linear-30 from-themColor to-themColor2 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all ease-in-out duration-300" />
@@ -124,7 +124,7 @@ const Navbar = () => {
                         </Link>
 
                         {/* Profile dropdown */}
-                        <button className='group relative bg-transparent hidden sm:inline-block md:text-lg border-2 px-5 py-2 lg:px-6 lg:py-3 text-center transition-all ease-in-out duration-300' style={borderGradient}>
+                        <button className='group relative bg-transparent hidden md:inline-block md:text-lg border-2 px-5 py-2 lg:px-6 lg:py-3 text-center transition-all ease-in-out duration-300' style={borderGradient}>
                             <span className="absolute start-0 top-0 h-full w-0  bg-linear-30 from-themColor to-themColor2 group-hover:w-full transition-all ease-in-out duration-300" />
                             <span className='group-hover:text-white relative transition-all ease-in-out duration-300'>Let's Connect</span>
                         </button>
@@ -132,7 +132,7 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <DisclosurePanel className="sm:hidden">
+            <DisclosurePanel className="md:hidden">
                 <div className="space-y-1 px-2 pb-3 pt-2">
                     {navigation.map((item) => (
                         <DisclosureButton

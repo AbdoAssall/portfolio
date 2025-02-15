@@ -52,7 +52,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-body) !important;
   font-weight: 400;
   line-height: 1.6;
   background-color: var(--body-background-color);
@@ -61,6 +61,11 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   color: var(--text-color-dark);
+  font-family: var(--font-body) !important;
+}
+p {
+  font-weight: 400;
+  font-family: var(--font-body) !important; 
 }
 svg {
   fill: currentColor;

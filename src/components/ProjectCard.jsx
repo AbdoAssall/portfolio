@@ -1,34 +1,58 @@
-import {
-    Card,
-    CardHeader,
-    CardBody,
-    CardFooter,
-    Typography,
-    Button,
-  } from "@material-tailwind/react";
-   
-  export function ProjectCard() {
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import { Card, CardBody, CardFooter, Tooltip } from "@material-tailwind/react";
+import { ImLink } from "react-icons/im";
+import { IoLogoGithub } from "react-icons/io";
+import { MdArrowRightAlt } from "react-icons/md";
+
+export function ProjectCard({ project }) {
     return (
-      <Card className="mt-6 w-96">
-        <CardHeader color="blue-gray" className="relative h-56">
-          <img
-            src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
-            alt="card-image"
-          />
-        </CardHeader>
-        <CardBody>
-          <Typography variant="h5" color="blue-gray" className="mb-2">
-            UI/UX Review Check
-          </Typography>
-          <Typography>
-            The place is close to Barceloneta Beach and bus stop just 2 min by
-            walk and near to &quot;Naviglio&quot; where you can enjoy the main
-            night life in Barcelona.
-          </Typography>
-        </CardBody>
-        <CardFooter className="pt-0">
-          <Button>Read More</Button>
-        </CardFooter>
-      </Card>
+        <Card className="mt-6 w-full sm:w-72 lg:w-80 bg-gray-250 !rounded-md border border-themColor hover:rotate-1 transition-transform duration-500 ease-in-out">
+            <div className="relative w-full h-auto md:h-52">
+                <img
+                    src={project.img}
+                    alt="card-image"
+                    className="w-full rounded-t-md"
+                />
+            </div>
+            <CardBody className="text-left">
+                <h3 className="mb-3 text-lg capitalize">
+                    {project.title}
+                </h3>
+                <p className="text-mainColor text-[0.938rem]">
+                   {project.desc}
+                </p>
+            </CardBody>
+            <CardFooter className="flex justify-between">
+                <div className="flex gap-3">
+                    <Tooltip content="Demo" className="bg-mainColor font-medium">
+                        <Link to={project.demo_link} >
+                            <ImLink aria-hidden="true" className="w-5 h-5" />
+                        </Link>
+                    </Tooltip>
+                    <Tooltip content="GitHub" className="bg-mainColor font-medium">
+                        <Link to={project.github_link} >
+                            <IoLogoGithub aria-hidden="true" className="w-5 h-5" />
+                        </Link>
+                    </Tooltip>
+                </div>
+                <button className="group flex items-center gap-1 text-blue-500 font-medium cursor-pointer">
+                    <span>More</span>
+                    <MdArrowRightAlt aria-hidden="true" className="w-5 h-5 group-hover:translate-x-1" />
+                </button>
+            </CardFooter>
+        </Card>
     );
-  }
+}
+
+ProjectCard.propTypes = {
+    project: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        label: PropTypes.string.isRequired,
+        img: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        desc: PropTypes.string.isRequired,
+        demo_link: PropTypes.string.isRequired,
+        github_link: PropTypes.string.isRequired
+    }).isRequired
+}
