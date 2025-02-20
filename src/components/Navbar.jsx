@@ -87,7 +87,7 @@ const Navbar = () => {
                                         aria-current={item.current ? 'page' : undefined}
                                         style={borderGradient}
                                         className={classNames(
-                                            item.current ? 'text-themColor border-b' : 'text-darkColor hover:text-themColor transition-all duration-500',
+                                            item.current ? 'text-themColor border-b' : 'text-darkColor hover:text-themColor transition-all duration-300',
                                             'px-0 pt-2 text-md font-medium',
                                         )}
                                     >

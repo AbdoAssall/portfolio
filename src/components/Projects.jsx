@@ -1,17 +1,14 @@
 import { useEffect, useState } from 'react';
-import {
-  Tabs,
-  TabsHeader,
-  TabsBody,
-  Tab,
-  TabPanel,
-} from "@material-tailwind/react";
+import { Tabs, TabsHeader, TabsBody, Tab, TabPanel } from "@material-tailwind/react";
 import { ProjectCard } from './ProjectCard';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Pagination from './Pagination';
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("all");
+  const [currentProjects, setCurrentProjects] = useState([]);
+  const itemsPerPage = 9;
 
   // Initialize AOS
   useEffect(() => {
@@ -89,23 +86,10 @@ const Projects = () => {
   ];
 
   const taps = [
-    {
-      label: "All",
-      value: "all",
-    },
-    {
-      label: "React",
-      value: "react",
-    },
-
-    {
-      label: "JavaScript",
-      value: "js",
-    },
-    {
-      label: "HTML & CSS",
-      value: "html&css",
-    },
+    { label: "All", value: "all" },
+    { label: "React", value: "react" },
+    { label: "JavaScript", value: "js" },
+    { label: "HTML & CSS", value: "html&css" },
   ];
 
   const getFilterProjects = () => {
@@ -114,6 +98,16 @@ const Projects = () => {
     }
     return projects.filter(project => project.label === activeTab);
   };
+
+  const handlePageChange = (paginatedProjects) => {
+    setCurrentProjects(paginatedProjects);
+  }
+
+  // Reset pagination when tap cahnges
+  useEffect(() => {
+    const filtered = getFilterProjects();
+    setCurrentProjects(filtered.slice(0, itemsPerPage));
+  }, [activeTab]);
 
   return (
     <div id="projects" className="py-12">
@@ -149,7 +143,7 @@ const Projects = () => {
           </TabsHeader>
           <TabsBody>
             <TabPanel value={activeTab} className='mt-6 max-w-7xl flex justify-center flex-wrap gap-x-7'>
-              {getFilterProjects().map((project, index) => (
+              {currentProjects.map((project, index) => (
                 <div
                   key={project.id}
                   data-aos="zoom-in"
@@ -161,6 +155,12 @@ const Projects = () => {
             </TabPanel>
           </TabsBody>
         </Tabs>
+
+        <Pagination
+          projects={getFilterProjects()}
+          itemsPerPage={itemsPerPage}
+          onPageChange={handlePageChange}
+        />
       </div>
     </div>
   )
