@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Tabs, TabsHeader, TabsBody, Tab, TabPanel } from "@material-tailwind/react";
 import { ProjectCard } from './ProjectCard';
 import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 import Pagination from './Pagination';
 
 const Projects = () => {

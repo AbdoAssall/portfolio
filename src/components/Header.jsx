@@ -62,10 +62,10 @@ const Main = () => {
                                     <IoLogoTwitter aria-hidden="true" className="h-5 w-5 relative group-hover:text-white transition-all ease-in-out duration-300" />
                                 </Link>
                             </div>
-                            <button className='btn connect-btn'>
+                            <a href='#contact' className='btn connect-btn'>
                                 Let's Connect
                                 <IoArrowForwardCircleOutline className='arrow-btn inline-block ml-2 text-2xl' />
-                            </button>
+                            </a>
                         </div>
                         <div className='site-hero-left flex-1 self-start relative min-w-80 max-w-96'>
                             <div className='site-cover-image'>

@@ -9,7 +9,7 @@
 }
 .connect-btn {
     color: var(--text-color-dark) !important;
-    padding-top: 0.1rem;
+    padding-top: 0.7rem;
     border: none;
     background-image: linear-gradient(to right, #e7b43a, #ecbc4b, #f0c45b, #f5cc6a, #f9d479);
 }

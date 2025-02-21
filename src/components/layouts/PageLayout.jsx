@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import Navbar from "../Navbar";
+import Footer from "../Footer";
 
 const PageLayout = ({ children }) => {
   return (
@@ -57,11 +58,12 @@ const PageLayout = ({ children }) => {
 
       <Navbar />
       <main>{children}</main>
+      <Footer />
     </div>
   )
 }
 export default PageLayout;
 
 PageLayout.propTypes = {
-  children: PropTypes.string.isRequired
+  children: PropTypes.node.isRequired
 }

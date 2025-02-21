@@ -13,8 +13,8 @@ import { LuGithub } from "react-icons/lu";
 const navigation = [
     { name: 'Home', href: '/', current: true },
     { name: 'About', href: '#', current: false },
-    { name: 'Projects', href: '#projects', current: false },
     { name: 'Skills', href: '#skills', current: false },
+    { name: 'Projects', href: '#projects', current: false },
 ]
 // const socialLinks = [
 //     { name: 'Linkedin', href: '#', current: false},
@@ -124,10 +124,14 @@ const Navbar = () => {
                         </Link>
 
                         {/* Profile dropdown */}
-                        <button className='group relative bg-transparent hidden md:inline-block md:text-lg border-2 px-5 py-2 lg:px-6 lg:py-3 text-center transition-all ease-in-out duration-300' style={borderGradient}>
+                        <a
+                            href='#contact'
+                            className='group relative bg-transparent hidden md:inline-block md:text-lg border-2 px-5 py-2 lg:px-6 lg:py-3 text-center transition-all ease-in-out duration-300'
+                            style={borderGradient}
+                        >
                             <span className="absolute start-0 top-0 h-full w-0  bg-linear-30 from-themColor to-themColor2 group-hover:w-full transition-all ease-in-out duration-300" />
                             <span className='group-hover:text-white relative transition-all ease-in-out duration-300'>Let's Connect</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -154,10 +158,14 @@ const Navbar = () => {
                         style={{ marginBottom: 22 }}>
                         <LuGithub className='w-5 h-5' />
                     </Link>
-                    <button className='group relative bg-transparent sm:text-md md:text-lg border-2 px-5 py-2 lg:px-6 lg:py-3 w-full text-center transition-all ease-in-out duration-300' style={borderGradient}>
+                    <a
+                        href='#contact'
+                        className='group relative bg-transparent sm:text-md md:text-lg border-2 px-5 py-2 lg:px-6 lg:py-3 w-full text-center transition-all ease-in-out duration-300'
+                        style={borderGradient}
+                    >
                         <span className="absolute start-0 top-0 h-full w-0 bg-linear-30 from-themColor to-themColor2 group-hover:w-full transition-all ease-in-out duration-300" />
                         <span className='group-hover:text-white relative transition-all ease-in-out duration-300'>Let's Connect</span>
-                    </button>
+                    </a>
                 </div>
             </DisclosurePanel>
         </Disclosure>
