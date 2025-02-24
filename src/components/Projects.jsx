@@ -1,13 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo, useCallback } from 'react';
 import { Tabs, TabsHeader, TabsBody, Tab, TabPanel } from "@material-tailwind/react";
 import { ProjectCard } from './ProjectCard';
 import AOS from 'aos';
-
 import Pagination from './Pagination';
+import projects from '../projects.json'
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("all");
   const [currentProjects, setCurrentProjects] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
 
   // Initialize AOS
@@ -28,63 +29,6 @@ const Projects = () => {
   //   return () => clearTimeout(timer);
   // }, [activeTab]);
 
-  const projects = [
-    {
-      id: 1,
-      label: 'react',
-      title: 'react',
-      desc: 'The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio" where you can enjoy the main night life in Barcelona.',
-      img: 'https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80',
-      demo_link: 'https://abdoassal-portfolio.netlify.app/',
-      github_link: 'https://github.com/AbdoAssall'
-    },
-    {
-      id: 2,
-      label: 'react',
-      title: 'react2',
-      desc: 'The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio" where you can enjoy the main night life in Barcelona.',
-      img: 'https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80',
-      demo_link: 'https://abdoassal-portfolio.netlify.app/',
-      github_link: 'https://github.com/AbdoAssall'
-    },
-    {
-      id: 3,
-      label: 'js',
-      title: 'JavaScript',
-      desc: 'The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio" where you can enjoy the main night life in Barcelona.',
-      img: 'https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80',
-      demo_link: 'https://abdoassal-portfolio.netlify.app/',
-      github_link: 'https://github.com/AbdoAssall'
-    },
-    {
-      id: 4,
-      label: 'html&css',
-      title: 'HTML',
-      desc: 'The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio" where you can enjoy the main night life in Barcelona.',
-      img: 'https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80',
-      demo_link: 'https://abdoassal-portfolio.netlify.app/',
-      github_link: 'https://github.com/AbdoAssall'
-    },
-    {
-      id: 5,
-      label: 'css',
-      title: 'CSS',
-      desc: 'The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio" where you can enjoy the main night life in Barcelona.',
-      img: 'https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80',
-      demo_link: 'https://abdoassal-portfolio.netlify.app/',
-      github_link: 'https://github.com/AbdoAssall'
-    },
-    {
-      id: 6,
-      label: 'js',
-      title: 'app',
-      desc: 'The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio" where you can enjoy the main night life in Barcelona.',
-      img: 'https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80',
-      demo_link: 'https://abdoassal-portfolio.netlify.app/',
-      github_link: 'https://github.com/AbdoAssall'
-    },
-  ];
-
   const taps = [
     { label: "All", value: "all" },
     { label: "React", value: "react" },
@@ -92,22 +36,24 @@ const Projects = () => {
     { label: "HTML & CSS", value: "html&css" },
   ];
 
-  const getFilterProjects = () => {
+  const getFilterProjects = useMemo(() => {
     if (activeTab === 'all') {
       return projects;
     }
     return projects.filter(project => project.label === activeTab);
-  };
+  }, [activeTab]);
 
-  const handlePageChange = (paginatedProjects) => {
+  const handlePageChange = useCallback((paginatedProjects) => {
     setCurrentProjects(paginatedProjects);
-  }
+  }, [])
 
   // Reset pagination when tap cahnges
   useEffect(() => {
-    const filtered = getFilterProjects();
-    setCurrentProjects(filtered.slice(0, itemsPerPage));
-  }, [activeTab]);
+    setCurrentPage(1)
+    const startIndex = 0;
+    const endIndex = startIndex + itemsPerPage;
+    setCurrentProjects(getFilterProjects.slice(startIndex, endIndex));
+  }, [getFilterProjects, activeTab]);
 
   return (
     <div id="projects" className="py-12">
@@ -157,9 +103,11 @@ const Projects = () => {
         </Tabs>
 
         <Pagination
-          projects={getFilterProjects()}
+          projects={getFilterProjects}
           itemsPerPage={itemsPerPage}
           onPageChange={handlePageChange}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
         />
       </div>
     </div>

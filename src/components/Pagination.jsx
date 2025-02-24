@@ -1,9 +1,14 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import PropTypes from "prop-types";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-export default function Pagination({ projects, itemsPerPage = 9, onPageChange }) {
-  const [currentPage, setCurrentPage] = useState(1);
+export default function Pagination({
+  projects, 
+  itemsPerPage = 9, 
+  onPageChange,
+  currentPage,
+  setCurrentPage
+}) {
   const totalPages = Math.ceil(projects.length / itemsPerPage);
 
   const handleNext = () => {
@@ -72,8 +77,10 @@ export default function Pagination({ projects, itemsPerPage = 9, onPageChange })
   );
 }
 
-Pagination.prototype = {
+Pagination.propTypes = {
   projects: PropTypes.array.isRequired,
   itemsPerPage: PropTypes.number,
-  onPageChange: PropTypes.func.isRequired
+  onPageChange: PropTypes.func.isRequired,
+  currentPage: PropTypes.number.isRequired,
+  setCurrentPage: PropTypes.func.isRequired
 };
