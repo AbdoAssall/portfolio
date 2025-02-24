@@ -19,14 +19,14 @@ const Projects = () => {
   }, []);
 
   // Refresh AOS when tab changes
-  useEffect(() => {
-    // Small delay to ensure content is rendered before animation
-    const timer = setTimeout(() => {
-      AOS.refresh();
-    }, 50);
+  // useEffect(() => {
+  //   // Small delay to ensure content is rendered before animation
+  //   const timer = setTimeout(() => {
+  //     AOS.refresh();
+  //   }, 50);
 
-    return () => clearTimeout(timer);
-  }, [activeTab]);
+  //   return () => clearTimeout(timer);
+  // }, [activeTab]);
 
   const projects = [
     {
@@ -113,9 +113,9 @@ const Projects = () => {
     <div id="projects" className="py-12">
       <div className="mx-auto max-w-7xl px-4">
         <div className="section-title mb-10">
-          <h1 data-aos="fade-down" className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
+          <h2 data-aos="fade-down" className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
             Projects
-          </h1>
+          </h2>
 
           <div className="flex justify-center mt-3" data-aos="fade-up">
             <span className="inline-block w-40 h-1 bg-blue-500 rounded-full"></span>
@@ -146,8 +146,8 @@ const Projects = () => {
               {currentProjects.map((project, index) => (
                 <div
                   key={project.id}
-                  data-aos="zoom-in"
-                  data-aos-delay={index * 50}
+                  // data-aos="zoom-in"
+                  // data-aos-delay={index * 50}
                 >
                   <ProjectCard project={project} />
                 </div>

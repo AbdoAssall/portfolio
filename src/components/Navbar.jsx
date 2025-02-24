@@ -3,22 +3,18 @@ import { useState, useEffect, useCallback } from 'react'
 import '../assest/style/navbar.css'
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { TiSocialLinkedin } from "react-icons/ti";
 import { IoLogoGithub } from "react-icons/io";
 import { IoLogoTwitter } from "react-icons/io";
 import { LuGithub } from "react-icons/lu";
 
-
 const navigation = [
-    { name: 'Home', href: '/', current: true },
-    { name: 'About', href: '#', current: false },
-    { name: 'Skills', href: '#skills', current: false },
-    { name: 'Projects', href: '#projects', current: false },
+    { name: 'Home', href: '/', hash: false, current: false },
+    { name: 'About', href: '#about', hash: true, current: false },
+    { name: 'Skills', href: '#skills', hash: true, current: false },
+    { name: 'Projects', href: '#projects', hash: true, current: false },
 ]
-// const socialLinks = [
-//     { name: 'Linkedin', href: '#', current: false},
-//   ]
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -26,10 +22,38 @@ function classNames(...classes) {
 const Navbar = () => {
     const [navbarClass, setNavbarClass] = useState("")
     const [lastScrollY, setLastScrollY] = useState(0);
+    const [activeSection, setActiveSection] = useState('/')
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.pathname === '/' && !location.hash) {
+            setActiveSection('/')
+        }
+    }, [location])
 
     const borderGradient = {
         borderImageSlice: '1',
         borderImageSource: 'linear-gradient(30deg, #6229cf, #cc57fa)'
+    }
+
+    // Determine if a nav item is active
+    const isItemActive = (item) => {
+        if (!item.hash) {
+            // For non-hash links, check if path matches and no hash is present
+            return location.pathname === item.href && !location.hash
+        } else {
+            // For hash links, check if the active section matches
+            return activeSection === item.href
+        }
+    }
+
+    // Style for active links
+    const getLinksStyle = (item) => {
+        const active = isItemActive(item)
+        return {
+            color: active ? '#6229cf' : 'var(--text-color-dark)',
+            borderBottom: active ? 'solid 1px #6229cf' : ''
+        }
     }
 
     const handelScroll = useCallback(() => {
@@ -45,8 +69,23 @@ const Navbar = () => {
             // Scrolling up
             setNavbarClass("scrolled show");
         }
-
         setLastScrollY(currentScrollY);
+
+        // Check which section is currently in view
+        // Only check hash-based navigation items
+        const hashItems = navigation.filter(item => item.hash);
+        
+        for (const item of hashItems) {
+            const element = document.querySelector(item.href);
+            if (element) {
+                const rect = element.getBoundingClientRect();
+                // If the element is in the viewport (with some tolerance)
+                if (rect.top <= 150 && rect.bottom >= 150) {
+                    setActiveSection(item.href);
+                    break;
+                }
+            }
+        }
     }, [lastScrollY]);
 
     useEffect(() => {
@@ -81,18 +120,30 @@ const Navbar = () => {
                         <div className="hidden md:ml-6 md:block">
                             <div className="flex md:space-x-10 space-x-3">
                                 {navigation.map((item) => (
-                                    <NavLink
-                                        key={item.name}
-                                        to={item.href}
-                                        aria-current={item.current ? 'page' : undefined}
-                                        style={borderGradient}
-                                        className={classNames(
-                                            item.current ? 'text-themColor border-b' : 'text-darkColor hover:text-themColor transition-all duration-300',
-                                            'px-0 pt-2 text-md font-medium',
-                                        )}
-                                    >
-                                        {item.name}
-                                    </NavLink>
+                                    item.hash ? (
+                                        <a
+                                            key={item.name}
+                                            href={item.href}
+                                            style={getLinksStyle(item)}
+                                            className={classNames(
+                                                'px-0 pt-2 text-md font-medium text-darkColor hover:text-themColor transition-all duration-300',
+                                            )}
+                                        >
+                                            {item.name}
+                                        </a>
+                                    ) : (
+                                        // For non-hash links, use NavLink
+                                        <NavLink
+                                            key={item.name}
+                                            to={item.href}
+                                            style={getLinksStyle(item)}
+                                            className={classNames(
+                                                'px-0 pt-2 text-md font-medium text-darkColor hover:text-themColor transition-all duration-300',
+                                            )}
+                                        >
+                                            {item.name}
+                                        </NavLink>
+                                    )
                                 ))}
                             </div>
                         </div>
@@ -143,9 +194,9 @@ const Navbar = () => {
                             key={item.name}
                             as="a"
                             href={item.href}
-                            aria-current={item.current ? 'page' : undefined}
+                            aria-current={isItemActive(item) ? 'page' : undefined}
                             className={classNames(
-                                item.current ? 'bg-themColor text-white' : 'text-darkColor hover:bg-icon',
+                                isItemActive(item) ? 'bg-themColor text-white' : 'text-darkColor focus:bg-icon hover:bg-icon',
                                 'block rounded-md px-3 py-2 text-base font-medium',
                             )}
                         >
@@ -154,17 +205,18 @@ const Navbar = () => {
                     ))}
                     <Link
                         to="https://github.com/AbdoAssall"
-                        className='inline-block bg-linear-30 from-themColor to-themColor2 text-white text-lg ml-2 px-7 py-2 text-center rounded-md hover:opacity-90'
+                        target="_blank"
+                        className='soial-icons inline-block bg-linear-30 from-themColor to-themColor2 text-white text-lg ml-2 px-7 py-2 text-center rounded-md hover:opacity-90'
                         style={{ marginBottom: 22 }}>
                         <LuGithub className='w-5 h-5' />
                     </Link>
                     <a
                         href='#contact'
-                        className='group relative bg-transparent sm:text-md md:text-lg border-2 px-5 py-2 lg:px-6 lg:py-3 w-full text-center transition-all ease-in-out duration-300'
+                        className='group block relative bg-transparent sm:text-md md:text-lg border-2 px-5 pb-2 pt-3 !w-full text-center transition-all ease-in-out duration-300'
                         style={borderGradient}
                     >
-                        <span className="absolute start-0 top-0 h-full w-0 bg-linear-30 from-themColor to-themColor2 group-hover:w-full transition-all ease-in-out duration-300" />
-                        <span className='group-hover:text-white relative transition-all ease-in-out duration-300'>Let's Connect</span>
+                        <span className="absolute start-0 top-0 h-full w-0 bg-linear-30 from-themColor to-themColor2 group-focus:w-full group-hover:w-full transition-all ease-in-out duration-300" />
+                        <span className='group-focus:text-white group-hover:text-white relative transition-all ease-in-out duration-300'>Let's Connect</span>
                     </a>
                 </div>
             </DisclosurePanel>

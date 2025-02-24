@@ -23,7 +23,7 @@ export function ProjectCard({ project }) {
                    {project.desc}
                 </p>
             </CardBody>
-            <CardFooter className="flex justify-between">
+            <CardFooter className="pt-1 flex justify-between">
                 <div className="flex gap-3">
                     <Tooltip content="Demo" className="bg-mainColor font-medium">
                         <Link to={project.demo_link} >

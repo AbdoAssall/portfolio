@@ -12,11 +12,6 @@
   --color-gray-250: #f3f3f3;
   --gradient-primary: linear-gradient(30deg, #6229cf, #cc57fa);
 }
-/* @layer theme {
-  .gradient-primary {
-    background-image: linear-gradient(30deg, #6229cf, #cc57fa);
-  }
-} */
 
 @font-face {
   font-family: 'Centra';
