@@ -40,7 +40,7 @@ const Projects = () => {
     if (activeTab === 'all') {
       return projects;
     }
-    return projects.filter(project => project.label === activeTab);
+    return projects?.filter(project => project.label === activeTab);
   }, [activeTab]);
 
   const handlePageChange = useCallback((paginatedProjects) => {
@@ -89,7 +89,7 @@ const Projects = () => {
           </TabsHeader>
           <TabsBody>
             <TabPanel value={activeTab} className='mt-6 max-w-7xl flex justify-center flex-wrap gap-x-7'>
-              {currentProjects.map((project, index) => (
+              {currentProjects?.map((project) => (
                 <div
                   key={project.id}
                   // data-aos="zoom-in"

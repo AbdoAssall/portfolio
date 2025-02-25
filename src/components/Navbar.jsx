@@ -25,6 +25,7 @@ const Navbar = () => {
     const [navbarClass, setNavbarClass] = useState("");
     const [lastScrollY, setLastScrollY] = useState(0);
     const [activeSection, setActiveSection] = useState('/');
+    const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const [theme, setTheme] = useState(() => {
         if (localStorage.theme === "dark" ||
             (!("theme" in localStorage) && darkQuery.matches)
@@ -35,7 +36,6 @@ const Navbar = () => {
         }
     });
     const element = document.documentElement;
-    const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const location = useLocation();
 
     const toggleDarkMode = () => {
@@ -135,6 +135,23 @@ const Navbar = () => {
                             <Bars3Icon aria-hidden="true" className="block h-6 w-6 group-data-[open]:hidden" />
                             <XMarkIcon aria-hidden="true" className="hidden h-6 w-6 group-data-[open]:block" />
                         </DisclosureButton>
+                        <button
+                            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+                            className="flex items-center justify-center rounded-full p-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-themColor"
+                            onClick={toggleDarkMode}
+                        >
+                            {theme === "dark" ? (
+                                <div className="flex items-center">
+                                    <FaSun className="text-amber-400 text-xl md:text-2xl" />
+                                    <span className="ml-2 text-sm text-gray-300 md:hidden">Light Mode</span>
+                                </div>
+                            ) : (
+                                <div className="flex items-center">
+                                    <FaMoon className="text-mainColor text-xl md:text-2xl" />
+                                    <span className="ml-2 text-sm text-gray-700 md:hidden">Dark Mode</span>
+                                </div>
+                            )}
+                        </button>
                     </div>
                     <div className="flex flex-1 items-center justify-end me-3 md:items-stretch md:justify-start">
                         <div className="flex flex-shrink-0 items-center pt-1 md:pt-0">
@@ -212,8 +229,8 @@ const Navbar = () => {
                         </a>
                     </div>
                     <button
-                        aria-label='dark-mode'
-                        className="md:pl-3 w-7 h-7 text-2xl cursor-pointer rounded-full"
+                        aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+                        className="md:pl-3 w-7 h-7 text-2xl hidden md:inline-block cursor-pointer rounded-full"
                         onClick={toggleDarkMode}
                     >
                         {theme === "dark"

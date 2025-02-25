@@ -20,6 +20,11 @@
   font-weight: 400;
   font-style: normal;
 }
+
+* {
+  @apply transition-colors duration-200
+}
+
 :root {
   --body-background-color: #ffff;
   --text-color-main: #2D3350;
@@ -70,6 +75,9 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+button {
+  cursor: pointer
 }
 .btn {
   display: inline-block;
