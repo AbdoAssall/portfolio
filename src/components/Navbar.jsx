@@ -8,6 +8,8 @@ import { TiSocialLinkedin } from "react-icons/ti";
 import { IoLogoGithub } from "react-icons/io";
 import { IoLogoTwitter } from "react-icons/io";
 import { LuGithub } from "react-icons/lu";
+import { FaMoon } from "react-icons/fa6";
+import { FaSun } from "react-icons/fa";
 
 const navigation = [
     { name: 'Home', href: '/', hash: false, current: false },
@@ -20,10 +22,35 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 const Navbar = () => {
-    const [navbarClass, setNavbarClass] = useState("")
+    const [navbarClass, setNavbarClass] = useState("");
     const [lastScrollY, setLastScrollY] = useState(0);
-    const [activeSection, setActiveSection] = useState('/')
+    const [activeSection, setActiveSection] = useState('/');
+    const [theme, setTheme] = useState(() => {
+        if (localStorage.theme === "dark" ||
+            (!("theme" in localStorage) && darkQuery.matches)
+        ) {
+            return "dark";
+        } else {
+            return "light";
+        }
+    });
+    const element = document.documentElement;
+    const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const location = useLocation();
+
+    const toggleDarkMode = () => {
+        setTheme(theme === 'dark' ? 'light' : 'dark');
+    }
+
+    useEffect(() => {
+        if (theme === "dark") {
+            element.classList.add("dark");
+            localStorage.setItem("theme", "dark");
+        } else {
+            element.classList.remove("dark");
+            localStorage.setItem("theme", "light");
+        }
+    }, [theme, element]);
 
     useEffect(() => {
         if (location.pathname === '/' && !location.hash) {
@@ -74,7 +101,7 @@ const Navbar = () => {
         // Check which section is currently in view
         // Only check hash-based navigation items
         const hashItems = navigation.filter(item => item.hash);
-        
+
         for (const item of hashItems) {
             const element = document.querySelector(item.href);
             if (element) {
@@ -184,6 +211,16 @@ const Navbar = () => {
                             <span className='group-hover:text-white relative transition-all ease-in-out duration-300'>Let's Connect</span>
                         </a>
                     </div>
+                    <button
+                        aria-label='dark-mode'
+                        className="md:pl-3 w-7 h-7 text-2xl cursor-pointer rounded-full"
+                        onClick={toggleDarkMode}
+                    >
+                        {theme === "dark"
+                            ? (<FaSun className={`text-amber-400`} />)
+                            : (<FaMoon className={`text-mainColor`} />)
+                        }
+                    </button>
                 </div>
             </div>
 
