@@ -9,7 +9,7 @@ const Projects = () => {
   const [activeTab, setActiveTab] = useState("all");
   const [currentProjects, setCurrentProjects] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9;
+  const itemsPerPage = 3;
 
   // Initialize AOS
   useEffect(() => {
@@ -59,7 +59,7 @@ const Projects = () => {
     <div id="projects" className="py-12">
       <div className="mx-auto max-w-7xl px-4">
         <div className="section-title mb-10">
-          <h2 data-aos="fade-down" className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
+          <h2 data-aos="fade-down" className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:!text-white">
             Projects
           </h2>
 
@@ -72,7 +72,7 @@ const Projects = () => {
 
         <Tabs id="custom-animation" value={activeTab} className="text-center">
           <TabsHeader
-            className="p-0 max-w-4xl mx-auto bg-gray-250 border rounded-full border-gray-200 shadow"
+            className="p-0 max-w-4xl mx-auto bg-gray-250 dark:bg-dark-100 border rounded-full border-gray-200 dark:border-dark-200 shadow"
             indicatorProps={{
               className:
                 `bg-linear-30 from-themColor to-themColor2 ${activeTab === 'react' || activeTab === 'js' ? 'rounded-none' : activeTab === 'all' ? 'rounded-l-full' : 'rounded-r-full'}`,
@@ -82,7 +82,7 @@ const Projects = () => {
               <Tab key={value} value={value} onClick={() => setActiveTab(value)}
                 className={`p-2 font-medium flex-grow w-auto h-auto sm:h-full sm:w-full ${activeTab === value
                   ? 'text-white font-bold'
-                  : ''}`}>
+                  : 'text-mainColor dark:text-darkColo dark:text-white'}`}>
                 {label}
               </Tab>
             ))}

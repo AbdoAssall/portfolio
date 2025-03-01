@@ -23,8 +23,8 @@
     fill: none;
     position: absolute;
     width: 140%;
-    stroke: var(--text-color-dark);
-    opacity: 0.04;
+    /* stroke: var(--text-color-dark); */
+    /* opacity: 0.04; */
 }
 .flair-one {
     width: 100vw;

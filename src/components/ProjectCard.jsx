@@ -7,7 +7,11 @@ import { MdArrowRightAlt } from "react-icons/md";
 
 export function ProjectCard({ project }) {
     return (
-        <Card className="mt-6 w-full sm:w-72 lg:w-80 bg-gray-250 !rounded-md border border-themColor hover:rotate-1 transition-transform duration-500 ease-in-out">
+        <Card className={`mt-6 w-full sm:w-72 lg:w-80 
+                 dark:bg-dark-100/60 dark:border-white/30 dark:text-white dark:shadow-lg dark:hover:border-white
+                  bg-gray-250 border-gray-300 hover:border-themColor
+            !rounded-md border hover:rotate-1 transition-all duration-500 ease-in-out
+            hover:shadow-xl`}>
             <div className="relative w-full h-auto md:h-52">
                 <img
                     src={project.img}
@@ -16,27 +20,27 @@ export function ProjectCard({ project }) {
                 />
             </div>
             <CardBody className="text-left">
-                <h3 className="mb-3 text-lg capitalize">
+                <h3 className="mb-3 text-lg capitalize font-semibold dark:!text-white">
                     {project.title}
                 </h3>
-                <p className="text-mainColor text-[0.938rem]">
-                   {project.desc}
+                <p className="text-mainColor text-[0.938rem] dark:text-gray-300">
+                    {project.desc}
                 </p>
             </CardBody>
             <CardFooter className="pt-1 flex justify-between">
                 <div className="flex gap-3">
-                    <Tooltip content="Demo" className="bg-mainColor font-medium">
-                        <Link to={project.demo_link} >
+                    <Tooltip content="Demo" className="bg-mainColor dark:bg-gray-800 font-medium">
+                        <Link to={project.demo_link} className="dark:text-gray-300">
                             <ImLink aria-hidden="true" className="w-5 h-5" />
                         </Link>
                     </Tooltip>
-                    <Tooltip content="GitHub" className="bg-mainColor font-medium">
-                        <Link to={project.github_link} >
+                    <Tooltip content="GitHub" className="bg-mainColor dark:bg-gray-800 font-medium">
+                        <Link to={project.github_link} className="dark:text-gray-300">
                             <IoLogoGithub aria-hidden="true" className="w-5 h-5" />
                         </Link>
                     </Tooltip>
                 </div>
-                <button className="group flex items-center gap-1 text-blue-500 font-medium cursor-pointer">
+                <button className="group flex items-center gap-1 text-blue-500 font-medium dark:text-themColor2 cursor-pointer">
                     <span>More</span>
                     <MdArrowRightAlt aria-hidden="true" className="w-5 h-5 group-hover:translate-x-1" />
                 </button>

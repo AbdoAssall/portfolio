@@ -5,7 +5,7 @@ import { IoLogoTwitter } from "react-icons/io";
 
 const footer = () => {
     return (
-        <div className="px-4 sm:px-11 py-3 max-w-full bg-white flex items-center justify-center sm:justify-between flex-col sm:flex-row">
+        <div className="px-4 sm:px-11 py-3 max-w-full bg-white dark:bg-gray-200 flex items-center justify-center sm:justify-between flex-col sm:flex-row">
             <div className="mt-1 sm:mt-0">
                 &copy; 2024 <b>AbdoAssal</b> All rights reserved.
             </div>

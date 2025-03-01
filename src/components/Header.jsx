@@ -19,7 +19,7 @@ const Main = () => {
                                 Welcom All in My Portfolio
                                 <BsFillLightningFill className='text-yellow-300 text-2xl inline-block ml-2' />
                             </h1>
-                            <div className='intro-title text-5xl mt-6'>
+                            <div className='intro-title text-5xl mt-6 dark:text-white'>
                                 <p>Hi! I'm Abdelrahman Assal</p>
                                 <p>I'm a {" "}
                                     <span className='block sm:inline-block min-w-60 text-3xl sm:text-5xl'>
@@ -33,13 +33,13 @@ const Main = () => {
                                     </span>
                                 </p>
                             </div>
-                            <p className='text-xl max-w-2xl mt-5 mb-6 md:mb-8'>A full stack web developer who is passionate about creating
+                            <p className='text-xl max-w-2xl mt-5 mb-6 md:mb-8 dark:text-white'>A full stack web developer who is passionate about creating
                                 beautiful,  functional and responsive websites 🚀
                             </p>
                             <div className="mb-8 md:mb-0 flex items-center gap-3">
                                 <Link
                                     to="https://www.linkedin.com/in/abdelrahman-assal-798baa195"
-                                    className="soial-icons group relative rounded-full text-mainColor bg-icon p-1 text-center inline-block md:hidden focus:outline-none"
+                                    className="soial-icons group relative rounded-full text-mainColor bg-icon hover:bg-transparent p-1 text-center inline-block md:hidden focus:outline-none"
                                     target='blank'
                                 >
                                     <span className="absolute -inset-0 scale-0 rounded-full bg-linear-30 from-themColor to-themColor2 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all ease-in-out duration-300" />
@@ -47,7 +47,7 @@ const Main = () => {
                                 </Link>
                                 <Link
                                     to="https://github.com/AbdoAssall"
-                                    className="soial-icons group relative rounded-full text-mainColor bg-icon p-1 text-center inline-block md:hidden focus:outline-none"
+                                    className="soial-icons group relative rounded-full text-mainColor bg-icon hover:bg-transparent p-1 text-center inline-block md:hidden focus:outline-none"
                                     target='blank'
                                 >
                                     <span className="absolute -inset-0 scale-0 rounded-full bg-linear-30 from-themColor to-themColor2 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all ease-in-out duration-300" />
@@ -55,7 +55,7 @@ const Main = () => {
                                 </Link>
                                 <Link
                                     to="https://twitter.com/abdoassal83"
-                                    className="soial-icons group relative rounded-full text-mainColor bg-icon p-1 text-center inline-block md:hidden focus:outline-none"
+                                    className="soial-icons group relative rounded-full text-mainColor bg-icon hover:bg-transparent p-1 text-center inline-block md:hidden focus:outline-none"
                                     target='blank'
                                 >
                                     <span className="absolute -inset-0 scale-0 rounded-full  bg-linear-30 from-themColor to-themColor2 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all ease-in-out duration-300" />

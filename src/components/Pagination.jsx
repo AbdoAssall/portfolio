@@ -35,8 +35,8 @@ export default function Pagination({
         disabled={currentPage === 1}
         className={`px-3 py-2 leading-0 rounded font-medium transition-colors duration-300
             ${currentPage === 1
-            ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-            : "bg-gray200 bg-mainColor text-white hover:bg-themColor cursor-pointer"
+            ? "bg-gray-100 text-gray-400 dark:bg-dark-200 dark:text-gray-300  cursor-not-allowed"
+            : "bg-themColor text-white hover:bg-gray-800 dark:bg-mainColor dark:hover:bg-dark-200/80 cursor-pointer"
           }`}
         aria-label="Previous"
       >
@@ -49,10 +49,10 @@ export default function Pagination({
             key={index + 1}
             onClick={() => setCurrentPage(index + 1)}
             className={
-              "inline-block py-2 px-3 mx-1 rounded-lg text-sm font-semibold " +
+              "inline-block py-2 px-3 pt-2.5 mx-1 rounded-lg text-sm font-semibold " +
               (currentPage === index + 1
-                ? "bg-mainColor text-white dark:bg-mainColor"
-                : "text-gray-700 dark:text-gray-200 hover:bg-mainColor hover:text-white cursor-pointer")
+                ? "bg-themColor text-white dark:bg-dark-100/ dark:bg-mainColor"
+                : "text-gray-700 dark:text-gray-200 hover:bg-themColor dark:hover:bg-mainColor hover:text-white cursor-pointer")
             }
             disabled={currentPage === index}
           >
@@ -63,10 +63,10 @@ export default function Pagination({
 
       <button
         onClick={handleNext}
-        className={`px-4 py-2 rounded font-medium transition-colors duration-300
+        className={`px-3 py-2 rounded font-medium transition-colors duration-300
           ${currentPage === totalPages
-            ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-            : "bg-mainColor text-white hover:bg-themColor cursor-pointer"
+            ? "bg-gray-100 text-gray-400 dark:bg-dark-200 dark:text-gray-300 cursor-not-allowed"
+            : "bg-themColor text-white hover:bg-gray-800 dark:bg-mainColor dark:hover:bg-dark-200/80 cursor-pointer"
           }`}
         aria-label={"Next"}
         disabled={currentPage === totalPages}

@@ -2,6 +2,12 @@
     background-image: var(--gradient-primary);
     color: white;
 }
+.dark {
+    .site-hero-right h1 {
+        background: rgba(26, 31, 36, 0.9);
+        color: white;
+    }
+}
 .intro-title span {
     background-image: var(--gradient-primary);
     -webkit-background-clip: text;

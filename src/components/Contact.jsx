@@ -1,11 +1,13 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useContext } from 'react';
 import emailjs from '@emailjs/browser';
 import AOS from 'aos';
 import TextAreaInput from "./atoms/TextAreaInput";
 import TextInput from "./atoms/TextInput";
 import { FaEnvelope } from "react-icons/fa6";
+import { ThemeContext } from "../context/ThemeProvider";
 
 const Contact = () => {
+    const { theme } = useContext(ThemeContext)
     const formRef = useRef(null);
     const [form, setForm] = useState({
         firstName: '',
@@ -52,14 +54,12 @@ const Contact = () => {
 
     return (
         <div id="contact" className="pt-12">
-            <div className="py-6 px-4 md:px-8 mx-auto max-w-full flex items-center justify-center gap-8 flex-col md:flex-row bg-linear-30 from-themColor to-themColor2 text-white">
-                <div className="md:w-1/2">
+            <div className={`py-6 px-4 md:px-8 mx-auto max-w-full flex items-center justify-center gap-8 flex-col md:flex-row ${theme === 'light' ? 'bg-linear-30 from-themColor to-themColor2' : 'bg-dark-100'} text-white`}>
+                <div data-aos="zoom-in" className="md:w-1/2">
                     <img
                         src="/images/contact.svg"
                         className="w-96 h-auto sm:ml-auto"
                         alt="contact"
-                        data-aos="zoom-in"
-                        data-aos-delay={50}
                     />
                 </div>
                 <div className="md:w-1/2 pb-6">
