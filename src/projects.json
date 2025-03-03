@@ -67,7 +67,7 @@
         "label": "html&css",
         "title": "Travel Go - Traveling Website",
         "desc": "Developed a user-friendly travel site with an enhanced responsive design and interactive features.",
-        "img": "../public/images/projects/travelgo.jpg",
+        "img": "../images/projects/travelgo.jpg",
         "demo_link": "https://abdoassall.github.io/travelgo/",
         "github_link": "https://github.com/AbdoAssall/travelgo"
     },
