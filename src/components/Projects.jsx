@@ -9,7 +9,7 @@ const Projects = () => {
   const [activeTab, setActiveTab] = useState("all");
   const [currentProjects, setCurrentProjects] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 3;
+  const itemsPerPage = 9;
 
   // Initialize AOS
   useEffect(() => {
@@ -38,9 +38,14 @@ const Projects = () => {
 
   const getFilterProjects = useMemo(() => {
     if (activeTab === 'all') {
-      return projects;
+      return projects.sort(function (a, b) {
+        return b.id - a.id
+      });
     }
-    return projects?.filter(project => project.label === activeTab);
+    const filterProjects = projects?.filter(project => project.label === activeTab);
+    return filterProjects.sort(function (a, b) {
+      return b.id - a.id
+    });
   }, [activeTab]);
 
   const handlePageChange = useCallback((paginatedProjects) => {
@@ -60,7 +65,7 @@ const Projects = () => {
       <div className="mx-auto max-w-7xl px-4">
         <div className="section-title mb-10">
           <h2 data-aos="fade-down" className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:!text-white">
-            Projects
+            My Projects
           </h2>
 
           <div className="flex justify-center mt-3" data-aos="fade-up">
@@ -92,8 +97,8 @@ const Projects = () => {
               {currentProjects?.map((project) => (
                 <div
                   key={project.id}
-                  // data-aos="zoom-in"
-                  // data-aos-delay={index * 50}
+                // data-aos="zoom-in"
+                // data-aos-delay={index * 50}
                 >
                   <ProjectCard project={project} />
                 </div>

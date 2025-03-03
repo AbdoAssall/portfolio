@@ -1,56 +1,101 @@
 [
     {
         "id": 1,
-        "label": "react",
-        "title": "react",
-        "desc": "The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to 'Naviglio' where you can enjoy the main night life in Barcelona.",
-        "img": "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
-        "demo_link": "https://abdoassal-portfolio.netlify.app/",
-        "github_link": "https://github.com/AbdoAssall"
+        "label": "js",
+        "title": "Passenger Counter App",
+        "desc": "A simple app to track and save count values with increment, decrement, and reset functions.",
+        "img": "../images/projects/counter.webp",
+        "demo_link": "https://abdoassall.github.io/passenger-counter/",
+        "github_link": "https://github.com/AbdoAssall/passenger-counter"
     },
     {
         "id": 2,
-        "label": "react",
-        "title": "react2",
-        "desc": "The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to 'Naviglio' where you can enjoy the main night life in Barcelona.",
-        "img": "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
-        "demo_link": "https://abdoassal-portfolio.netlify.app/",
-        "github_link": "https://github.com/AbdoAssall"
+        "label": "html&css",
+        "title": "Leon",
+        "desc": "A sleek and responsive agency website. Showcasing a clean design, and well-structured sections.",
+        "img": "../images/projects/leon.jpg",
+        "demo_link": "https://abdoassall.github.io/Leon/",
+        "github_link": "https://github.com/AbdoAssall/Leon"
     },
     {
         "id": 3,
-        "label": "js",
-        "title": "JavaScript",
-        "desc": "The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to 'Naviglio' where you can enjoy the main night life in Barcelona.",
-        "img": "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
-        "demo_link": "https://abdoassal-portfolio.netlify.app/",
-        "github_link": "https://github.com/AbdoAssall"
+        "label": "html&css",
+        "title": "Restaurant Website",
+        "desc": "A stylish restaurant website showcasing the menu, services, and contact details with a modern UI",
+        "img": "../images/projects/restaurant.webp",
+        "demo_link": "https://abdoassall.github.io/Feliciano/",
+        "github_link": "https://github.com/AbdoAssall/Feliciano"
     },
     {
         "id": 4,
         "label": "html&css",
-        "title": "HTML",
-        "desc": "The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to 'Naviglio' where you can enjoy the main night life in Barcelona.",
-        "img": "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
-        "demo_link": "https://abdoassal-portfolio.netlify.app/",
-        "github_link": "https://github.com/AbdoAssall"
+        "title": "Kasper",
+        "desc": "A fully responsive creative agency website with sleek design. It features a modern layout.",
+        "img": "../images/projects/kasper.jpg",
+        "demo_link": "https://abdoassall.github.io/Kasper",
+        "github_link": "https://github.com/AbdoAssall/Kasper"
     },
     {
         "id": 5,
-        "label": "css",
-        "title": "CSS",
-        "desc": "The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to 'Naviglio' where you can enjoy the main night life in Barcelona.",
-        "img": "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
-        "demo_link": "https://abdoassal-portfolio.netlify.app/",
-        "github_link": "https://github.com/AbdoAssall"
+        "label": "html&css",
+        "title": "Product Card",
+        "desc": "A stylish and responsive product card UI with smooth hover effects for e-commerce displays.",
+        "img": "../images/projects/product.jpg",
+        "demo_link": "https://abdoassall.github.io/ProductCard3/",
+        "github_link": "https://github.com/AbdoAssall/ProductCard3"
     },
     {
         "id": 6,
+        "label": "html&css",
+        "title": "Furniture e-commerce",
+        "desc": "A clean and modern website with a minimalist design, smooth animations, and a fully responsive layout.",
+        "img": "../images/projects/minimal.jpg",
+        "demo_link": "https://abdoassall.github.io/Minimal",
+        "github_link": "https://github.com/AbdoAssall/Minimal"
+    },
+    {
+        "id": 7,
         "label": "js",
-        "title": "app",
-        "desc": "The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to 'Naviglio' where you can enjoy the main night life in Barcelona.",
-        "img": "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
-        "demo_link": "https://abdoassal-portfolio.netlify.app/",
-        "github_link": "https://github.com/AbdoAssall"
+        "title": "AI Landing Page",
+        "desc": "A futuristic and responsive website. Enhanced user-friendly navigation and visually engaging content.",
+        "img": "../images/projects/robotix.PNG",
+        "demo_link": "https://abdoassall.github.io/robotix/",
+        "github_link": "https://github.com/AbdoAssall/robotix"
+    },
+    {
+        "id": 8,
+        "label": "html&css",
+        "title": "Travel Go - Traveling Website",
+        "desc": "Developed a user-friendly travel site with an enhanced responsive design and interactive features.",
+        "img": "../public/images/projects/travelgo.jpg",
+        "demo_link": "https://abdoassall.github.io/travelgo/",
+        "github_link": "https://github.com/AbdoAssall/travelgo"
+    },
+    {
+        "id": 9,
+        "label": "react",
+        "title": "Movies App",
+        "desc": "Developed a movie and tv show website using react.js and third-party APIs for real-time data retrieval.",
+        "img": "../images/projects/tv.jpg",
+        "demo_link": "https://starshow.netlify.app/",
+        "github_link": "https://github.com/AbdoAssall/Star"
+    },
+    {
+        "id": 10,
+        "label": "js",
+        "title": "E-commerce Web Application",
+        "desc": "Built a fully functional e-commerce platform with product browsing, shopping cart functionality.",
+        "img": "../images/projects/e-commerce.png",
+        "demo_link": "https://abdoassall.github.io/e-commerce-js/index.html",
+        "github_link": "https://github.com/AbdoAssall/e-commerce-js"
+    },
+    {
+        "id": 11,
+        "label": "react",
+        "title": "Academic Learning Platform",
+        "desc": "Designed and developed a scalable e-learning platform with a secure authentication system.",
+        "img": "../images/projects/e-learing.png",
+        "demo_link": "https://visiontheme.site/",
+        "github_link": ""
     }
 ]
