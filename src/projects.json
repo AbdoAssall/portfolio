@@ -97,5 +97,14 @@
         "img": "../images/projects/e-learing.png",
         "demo_link": "https://visiontheme.site/",
         "github_link": ""
+    },
+    {
+        "id": 12,
+        "label": "js",
+        "title": "Guess My Number Game",
+        "desc": "Guess My Number is a simple number-guessing game built with HTML, CSS, and JavaScript.",
+        "img": "../images/projects/guess2.png",
+        "demo_link": "https://abdoassall.github.io/guess-my-number-js/",
+        "github_link": "https://github.com/AbdoAssall/guess-my-number-js"
     }
 ]
