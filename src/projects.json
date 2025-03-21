@@ -106,5 +106,14 @@
         "img": "../images/projects/guess2.png",
         "demo_link": "https://abdoassall.github.io/guess-my-number-js/",
         "github_link": "https://github.com/AbdoAssall/guess-my-number-js"
+    },
+    {
+        "id": 13,
+        "label": "js",
+        "title": "Dice Duel – Game",
+        "desc": "Is a simple and exciting two-player dice game where players take turns rolling the dice to reach 100 points first.",
+        "img": "../images/projects/dice.png",
+        "demo_link": "https://dice-duel-game-v2.netlify.app/",
+        "github_link": "https://github.com/AbdoAssall/dice-duel-game-js"
     }
 ]
