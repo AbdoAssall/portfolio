@@ -115,5 +115,23 @@
         "img": "../images/projects/dice.png",
         "demo_link": "https://dice-duel-game-v2.netlify.app/",
         "github_link": "https://github.com/AbdoAssall/dice-duel-game-js"
+    },
+    {
+        "id": 14,
+        "label": "js",
+        "title": "Bankist App",
+        "desc": "The Bankist App simulates basic banking operations such as viewing account transactions, and more.",
+        "img": "../images/projects/bankist-app.png",
+        "demo_link": "https://abdoassall.github.io/bankist-app-js/",
+        "github_link": "https://github.com/AbdoAssall/bankist-app-js/"
+    },
+    {
+        "id": 15,
+        "label": "react",
+        "title": "ScopeHub",
+        "desc": "Scope Hub is a professional Arabic agency offering comprehensive academic and marketing services, for the Arab and Gulf markets.",
+        "img": "../images/projects/scopeHub.png",
+        "demo_link": "https://scope-hub.netlify.app/",
+        "github_link": ""
     }
 ]
