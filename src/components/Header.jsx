@@ -38,7 +38,7 @@ const Main = () => {
                             </p>
                             <div className="mb-8 md:mb-0 flex items-center gap-3">
                                 <Link
-                                    to="https://www.linkedin.com/in/abdelrahman-assal-798baa195"
+                                    to="https://www.linkedin.com/in/abdelrahman-assal"
                                     className="soial-icons group relative rounded-full text-mainColor bg-icon hover:bg-transparent p-1 text-center inline-block md:hidden focus:outline-none"
                                     target='blank'
                                 >
