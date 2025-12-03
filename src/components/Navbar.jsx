@@ -171,7 +171,7 @@ const Navbar = () => {
                     </div>
                     <div className="absolute inset-y-0 right-0 hidden md:flex items-center gap-3 pr-2 sm:static md:inset-auto md:ml-6 md:pr-0">
                         <Link
-                            to="https://www.linkedin.com/in/abdelrahman-assal-798baa195"
+                            to="https://www.linkedin.com/in/abdelrahman-assal"
                             className="soial-icons group relative rounded-full text-mainColor bg-icon hover:bg-transparent p-2 text-center hidden md:inline-block focus:outline-none"
                             target='blank'
                         >
