@@ -12,7 +12,7 @@ const footer = () => {
             <div className="sm:mt-0">
                 <div className="flex items-center gap-3">
                     <Link
-                        to="https://www.linkedin.com/in/abdelrahman-assal-798baa195"
+                        to="https://www.linkedin.com/in/abdelrahman-assal"
                         className="soial-icons group relative rounded-full text-mainColor border border-gray-300 p-2 text-center inline-block focus:outline-none"
                         target='blank'
                     >
