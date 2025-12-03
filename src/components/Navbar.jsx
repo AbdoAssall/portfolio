@@ -244,7 +244,7 @@ const Navbar = () => {
                             <span>GitHub</span>
                         </Link>
                         <Link
-                            to="https://www.linkedin.com/in/abdelrahman-assal-798baa195"
+                            to="https://www.linkedin.com/in/abdelrahman-assal"
                             target="_blank"
                             className={`soial-icons inline-flex gap-2 ${theme === 'dark' ? 'bg-dark-500 hover:bg-dark-200/50' : 'bg-linear-30 from-themColor to-themColor2 hover:opacity-90'} text-white text-lg ml-2 !px-4 py-2 !pt-4 text-center rounded-md`}
                         >
