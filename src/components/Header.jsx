@@ -16,7 +16,7 @@ const Main = () => {
                     <div className='hero-tow-column flex flex-wrap sm:flex-col lg:flex-row gap-9 items-center'>
                         <div className='site-hero-right flex-grow flex-shrink-0 basis-full sm:basis-1/2 sm:max-w-xl md:max-w-2xl lg:max-w-4xl'>
                             <h1 className='text-xl font-bold text-white dark:text-white pb-3 pt-4 px-3 w-fit drop-shadow-lg'>
-                                Welcom All in My Portfolio
+                                Welcome All in My Portfolio
                                 <BsFillLightningFill className='text-yellow-300 text-2xl inline-block ml-2' />
                             </h1>
                             <div className='intro-title text-5xl mt-6 dark:text-white'>
@@ -38,7 +38,7 @@ const Main = () => {
                             </p>
                             <div className="mb-8 md:mb-0 flex items-center gap-3">
                                 <Link
-                                    to="https://www.linkedin.com/in/abdelrahman-assal-798baa195"
+                                    to="https://www.linkedin.com/in/abdelrahman-assal"
                                     className="soial-icons group relative rounded-full text-mainColor bg-icon hover:bg-transparent p-1 text-center inline-block md:hidden focus:outline-none"
                                     target='blank'
                                 >
