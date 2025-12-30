@@ -13,7 +13,7 @@
         "label": "html&css",
         "title": "Leon",
         "desc": "A sleek and responsive agency website. Showcasing a clean design, and well-structured sections.",
-        "img": "../images/projects/leon.jpg",
+        "img": "../images/projects/leon.webp",
         "demo_link": "https://abdoassall.github.io/Leon/",
         "github_link": "https://github.com/AbdoAssall/Leon"
     },
@@ -31,7 +31,7 @@
         "label": "html&css",
         "title": "Kasper",
         "desc": "A fully responsive creative agency website with sleek design. It features a modern layout.",
-        "img": "../images/projects/kasper.jpg",
+        "img": "../images/projects/kasper.webp",
         "demo_link": "https://abdoassall.github.io/Kasper",
         "github_link": "https://github.com/AbdoAssall/Kasper"
     },
@@ -40,7 +40,7 @@
         "label": "html&css",
         "title": "Product Card",
         "desc": "A stylish and responsive product card UI with smooth hover effects for e-commerce displays.",
-        "img": "../images/projects/product.jpg",
+        "img": "../images/projects/product.webp",
         "demo_link": "https://abdoassall.github.io/ProductCard3/",
         "github_link": "https://github.com/AbdoAssall/ProductCard3"
     },
@@ -49,7 +49,7 @@
         "label": "html&css",
         "title": "Furniture e-commerce",
         "desc": "A clean and modern website with a minimalist design, smooth animations, and a fully responsive layout.",
-        "img": "../images/projects/minimal.jpg",
+        "img": "../images/projects/minimal.webp",
         "demo_link": "https://abdoassall.github.io/Minimal",
         "github_link": "https://github.com/AbdoAssall/Minimal"
     },
@@ -58,7 +58,7 @@
         "label": "js",
         "title": "AI Landing Page",
         "desc": "A futuristic and responsive website. Enhanced user-friendly navigation and visually engaging content.",
-        "img": "../images/projects/robotix.PNG",
+        "img": "../images/projects/robotix.webp",
         "demo_link": "https://abdoassall.github.io/robotix/",
         "github_link": "https://github.com/AbdoAssall/robotix"
     },
@@ -67,7 +67,7 @@
         "label": "html&css",
         "title": "Travel Go - Traveling Website",
         "desc": "Developed a user-friendly travel site with an enhanced responsive design and interactive features.",
-        "img": "../images/projects/travelgo.jpg",
+        "img": "../images/projects/travelgo.webp",
         "demo_link": "https://abdoassall.github.io/travelgo/",
         "github_link": "https://github.com/AbdoAssall/travelgo"
     },
@@ -76,7 +76,7 @@
         "label": "react",
         "title": "Movies App",
         "desc": "Developed a movie and tv show website using react.js and third-party APIs for real-time data retrieval.",
-        "img": "../images/projects/tv.jpg",
+        "img": "../images/projects/tv.webp",
         "demo_link": "https://starshow.netlify.app/",
         "github_link": "https://github.com/AbdoAssall/Star"
     },
@@ -85,7 +85,7 @@
         "label": "js",
         "title": "E-commerce Web Application",
         "desc": "Built a fully functional e-commerce platform with product browsing, shopping cart functionality.",
-        "img": "../images/projects/e-commerce.png",
+        "img": "../images/projects/e-commerce.webp",
         "demo_link": "https://abdoassall.github.io/e-commerce-js/index.html",
         "github_link": "https://github.com/AbdoAssall/e-commerce-js"
     },
@@ -94,7 +94,7 @@
         "label": "react",
         "title": "Academic Learning Platform",
         "desc": "Designed and developed a scalable e-learning platform with a secure authentication system.",
-        "img": "../images/projects/e-learing.png",
+        "img": "../images/projects/e-learing.webp",
         "demo_link": "https://visiontheme.site/",
         "github_link": ""
     },
@@ -103,7 +103,7 @@
         "label": "js",
         "title": "Guess My Number Game",
         "desc": "Guess My Number is a simple number-guessing game built with HTML, CSS, and JavaScript.",
-        "img": "../images/projects/guess2.png",
+        "img": "../images/projects/guess2.webp",
         "demo_link": "https://abdoassall.github.io/guess-my-number-js/",
         "github_link": "https://github.com/AbdoAssall/guess-my-number-js"
     },
@@ -112,7 +112,7 @@
         "label": "js",
         "title": "Dice Duel – Game",
         "desc": "Is a simple and exciting two-player dice game where players take turns rolling the dice to reach 100 points first.",
-        "img": "../images/projects/dice.png",
+        "img": "../images/projects/dice.webp",
         "demo_link": "https://dice-duel-game-v2.netlify.app/",
         "github_link": "https://github.com/AbdoAssall/dice-duel-game-js"
     },
@@ -121,7 +121,7 @@
         "label": "js",
         "title": "Bankist App",
         "desc": "The Bankist App simulates basic banking operations such as viewing account transactions, and more.",
-        "img": "../images/projects/bankist-app.png",
+        "img": "../images/projects/bankist-app.webp",
         "demo_link": "https://abdoassall.github.io/bankist-app-js/",
         "github_link": "https://github.com/AbdoAssall/bankist-app-js/"
     },
@@ -130,7 +130,7 @@
         "label": "react",
         "title": "ScopeHub",
         "desc": "Scope Hub is a professional Arabic agency offering comprehensive academic and marketing services, for the Arab and Gulf markets.",
-        "img": "../images/projects/scopeHub.png",
+        "img": "../images/projects/scopeHub.webp",
         "demo_link": "https://scope-hub.netlify.app/",
         "github_link": ""
     }
