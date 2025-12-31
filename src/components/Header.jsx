@@ -10,7 +10,7 @@ import { IoArrowForwardCircleOutline } from "react-icons/io5";
 
 const Main = () => {
     return (
-        <div className='py-6 block px-1 sm:flex-grow'>
+        <div id='home' className='py-6 block px-1 sm:flex-grow'>
             <div className='site-hero my-4 lg:mb-24'>
                 <div className='container md:mx-auto px-4 lg:px-4'>
                     <div className='hero-tow-column flex flex-wrap sm:flex-col lg:flex-row gap-9 items-center'>
@@ -36,34 +36,37 @@ const Main = () => {
                             <p className='text-xl max-w-2xl mt-5 mb-6 md:mb-8 dark:text-white'>A full stack web developer who is passionate about creating
                                 beautiful,  functional and responsive websites 🚀
                             </p>
-                            <div className="mb-8 md:mb-0 flex items-center gap-3">
-                                <Link
-                                    to="https://www.linkedin.com/in/abdelrahman-assal"
-                                    className="soial-icons group relative rounded-full text-mainColor bg-icon hover:bg-transparent p-1 text-center inline-block md:hidden focus:outline-none"
-                                    target='blank'
-                                >
-                                    <span className="absolute -inset-0 scale-0 rounded-full bg-linear-30 from-themColor to-themColor2 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all ease-in-out duration-300" />
-                                    <TiSocialLinkedin aria-hidden="true" className="h-5 w-5 relative group-hover:text-white transition-all ease-in-out duration-300" />
-                                </Link>
-                                <Link
-                                    to="https://github.com/AbdoAssall"
-                                    className="soial-icons group relative rounded-full text-mainColor bg-icon hover:bg-transparent p-1 text-center inline-block md:hidden focus:outline-none"
-                                    target='blank'
-                                >
-                                    <span className="absolute -inset-0 scale-0 rounded-full bg-linear-30 from-themColor to-themColor2 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all ease-in-out duration-300" />
-                                    <IoLogoGithub aria-hidden="true" className="h-5 w-5 relative group-hover:text-white transition-all ease-in-out duration-300" />
-                                </Link>
-                                <Link
-                                    to="https://twitter.com/abdoassal83"
-                                    className="soial-icons group relative rounded-full text-mainColor bg-icon hover:bg-transparent p-1 text-center inline-block md:hidden focus:outline-none"
-                                    target='blank'
-                                >
-                                    <span className="absolute -inset-0 scale-0 rounded-full  bg-linear-30 from-themColor to-themColor2 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all ease-in-out duration-300" />
-                                    <IoLogoTwitter aria-hidden="true" className="h-5 w-5 relative group-hover:text-white transition-all ease-in-out duration-300" />
-                                </Link>
+                            <div className="block lg:hidden">
+                                <div className="mb-8 lg:mb-0 flex items-center gap-3">
+                                    <Link
+                                        to="https://www.linkedin.com/in/abdelrahman-assal"
+                                        className="soial-icons group relative rounded-full text-mainColor bg-icon hover:bg-transparent p-1 text-center focus:outline-none"
+                                        target='blank'
+                                    >
+                                        <span className="absolute -inset-0 scale-0 rounded-full bg-linear-30 from-themColor to-themColor2 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all ease-in-out duration-300" />
+                                        <TiSocialLinkedin aria-hidden="true" className="h-5 w-5 relative group-hover:text-white transition-all ease-in-out duration-300" />
+                                    </Link>
+                                    <Link
+                                        to="https://github.com/AbdoAssall"
+                                        className="soial-icons group relative rounded-full text-mainColor bg-icon hover:bg-transparent p-1 text-center focus:outline-none"
+                                        target='blank'
+                                    >
+                                        <span className="absolute -inset-0 scale-0 rounded-full bg-linear-30 from-themColor to-themColor2 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all ease-in-out duration-300" />
+                                        <IoLogoGithub aria-hidden="true" className="h-5 w-5 relative group-hover:text-white transition-all ease-in-out duration-300" />
+                                    </Link>
+                                    <Link
+                                        to="https://twitter.com/abdoassal83"
+                                        className="soial-icons group relative rounded-full text-mainColor bg-icon hover:bg-transparent p-1 text-center focus:outline-none"
+                                        target='blank'
+                                    >
+                                        <span className="absolute -inset-0 scale-0 rounded-full  bg-linear-30 from-themColor to-themColor2 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all ease-in-out duration-300" />
+                                        <IoLogoTwitter aria-hidden="true" className="h-5 w-5 relative group-hover:text-white transition-all ease-in-out duration-300" />
+                                    </Link>
+                                </div>
                             </div>
-                            <a href='#contact' className='btn connect-btn'>
-                                Let's Connect
+                            <a href='' className='btn connect-btn'>
+                                Download CV
+                                {/* Let's Connect */}
                                 <IoArrowForwardCircleOutline className='arrow-btn inline-block ml-2 text-2xl' />
                             </a>
                         </div>

@@ -54,7 +54,7 @@ export default function Pagination({
                 ? "bg-themColor text-white dark:bg-dark-100/ dark:bg-mainColor"
                 : "text-gray-700 dark:text-gray-200 hover:bg-themColor dark:hover:bg-mainColor hover:text-white cursor-pointer")
             }
-            disabled={currentPage === index}
+            // disabled={currentPage === index}
           >
             {index + 1}
           </button>

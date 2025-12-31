@@ -91,13 +91,15 @@ const Navbar = () => {
             window.removeEventListener('scroll', handelScroll)
         }
     }, [handelScroll]);
+    
+    const homeSection = document.getElementById('home');
 
     return (
         <Disclosure as="nav" className={`navbar ${navbarClass} bg-transparent mb-0 md:mb-16`}>
             <div className="mx-auto max-w-7xl md:mt-4 px-2 sm:px-4">
                 <div className="relative flex h-16 items-center justify-between">
+                    {/* Mobile menu button*/}
                     <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
-                        {/* Mobile menu button*/}
                         <DisclosureButton className="group relative cursor-pointer inline-flex items-center justify-center rounded-full p-2 text-mainColor dark:text-white focus:outline-none hover:bg-gray-450/60 dark:hover:bg-dark-200/50">
                             <span className="absolute -inset-0.5" />
                             <span className="sr-only">Open main menu</span>
@@ -122,22 +124,24 @@ const Navbar = () => {
                             )}
                         </button>
                     </div>
-                    <div className="flex flex-1 items-center justify-end me-3 md:items-stretch md:justify-start">
-                        <div className="flex flex-shrink-0 items-center pt-1 md:pt-0">
-                            {theme === "dark" ? (
-                                <img
-                                    alt="abdoassal"
-                                    src="./images/logo-dark.png"
-                                    className="w-auto max-h-11"
-                                />
-                            ) : (
-                                <img
-                                    alt="abdoassal"
-                                    src="./images/logo-light.png"
-                                    className="w-auto max-h-11"
-                                />
-                            )}
-                        </div>
+                    {/* Logo */}
+                    <div className="flex justify-end w-full md:w-auto md:justify-start flex-shrink-0 items-center pt-1 md:pt-0">
+                        {theme === "dark" ? (
+                            <img
+                                alt="abdoassal"
+                                src="./images/logo-dark2.png"
+                                className="w-56 md:w-60 lg:w-65 h-auto"
+                            />
+                        ) : (
+                            <img
+                                alt="abdoassal"
+                                src="./images/logo-light.png"
+                                className="w-56 md:w-60 lg:w-65 h-auto"
+                            />
+                        )}
+                    </div>
+                    {/* Navigation */}
+                    <div className="flex flex-1 items-center justify-end me-3 md:items-center md:justify-center">
                         <div className="hidden md:ml-6 md:block">
                             <div className="flex md:space-x-10 space-x-3">
                                 {navigation.map((item) => (
@@ -157,6 +161,11 @@ const Navbar = () => {
                                         <NavLink
                                             key={item.name}
                                             to={item.href}
+                                            onClick={() => {
+                                                if (item.name === 'Home') {
+                                                    homeSection.scrollIntoView({ behavior: 'smooth' });  
+                                                }
+                                            }}
                                             className={classNames(
                                                 isItemActive(item) ? 'text-themColor border-b border-themColor dark:text-white dark:border-white' : 'text-darkColor hover:text-themColor dark:text-white dark:hover:text-gray-200',
                                                 'px-0 pt-2 text-md font-medium text-darkColor transition-all duration-300',
@@ -169,7 +178,8 @@ const Navbar = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="absolute inset-y-0 right-0 hidden md:flex items-center gap-3 pr-2 sm:static md:inset-auto md:ml-6 md:pr-0">
+                    {/* Social Icons */}
+                    <div className="absolute inset-y-0 right-0 hidden lg:flex items-center gap-3 pr-2 sm:static lg:inset-auto lg:ml-6 lg:pr-0">
                         <Link
                             to="https://www.linkedin.com/in/abdelrahman-assal"
                             className="soial-icons group relative rounded-full text-mainColor bg-icon hover:bg-transparent p-2 text-center hidden md:inline-block focus:outline-none"
@@ -205,16 +215,22 @@ const Navbar = () => {
                             <span className='dark:text-white group-hover:text-white relative transition-all ease-in-out duration-300'>Let's Connect</span>
                         </a>
                     </div>
-                    <button
-                        aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-                        className="md:pl-3 w-7 h-7 text-2xl hidden md:inline-block cursor-pointer rounded-full"
-                        onClick={toggleTheme}
-                    >
-                        {theme === "dark"
-                            ? (<FaSun className={`text-amber-400`} />)
-                            : (<FaMoon className={`text-mainColor`} />)
-                        }
-                    </button>
+                    {/* Theme Switcher */}
+                    <div className="relative group hidden md:flex items-center justify-center md:pl-3">
+                        <button
+                            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+                            className="w-7 h-7 text-2xl cursor-pointer rounded-full transition-all duration-300 focus:outline-none"
+                            onClick={toggleTheme}
+                        >
+                            {theme === "dark"
+                                ? (<FaSun className={`text-amber-400`} />)
+                                : (<FaMoon className={`text-mainColor`} />)
+                            }
+                        </button>
+                        <span className="absolute top-9 mt-2 left-3.5 -translate-x-1/2 px-2 py-1 text-xs text-white rounded-md bg-linear-30 from-themColor to-themColor2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap shadow-lg">
+                            {theme === "dark" ? "Light Mode" : "Dark Mode"}
+                        </span>
+                    </div>
                 </div>
             </div>
 
@@ -226,6 +242,11 @@ const Navbar = () => {
                             as="a"
                             href={item.href}
                             aria-current={isItemActive(item) ? 'page' : undefined}
+                            onClick={() => {
+                                if (item.name === 'Home') {
+                                     homeSection.scrollIntoView({ behavior: 'smooth' });
+                                }
+                            }}
                             className={classNames(
                                 isItemActive(item) ? 'bg-themColor text-white dark:bg-dark-200/50' : 'text-darkColor focus:bg-icon hover:bg-icon dark:text-white dark:hover:bg-dark-200/50',
                                 'block rounded-md px-3 py-2 text-base font-medium',

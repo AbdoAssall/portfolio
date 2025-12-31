@@ -7,7 +7,7 @@ import { MdArrowRightAlt } from "react-icons/md";
 
 export function ProjectCard({ project }) {
     return (
-        <Card className={`mt-6 w-full sm:w-72 lg:w-80
+        <Card className={`mt-6 w-full sm:w-72 lg:w-80 h-99
                  dark:bg-dark-100/60 dark:border-white/30 dark:text-white dark:shadow-lg dark:hover:border-white
                   bg-gray-250 border-gray-300 hover:border-themColor
             !rounded-md border hover:rotate-1 transition-all duration-500 ease-in-out
@@ -28,7 +28,7 @@ export function ProjectCard({ project }) {
                     {project.desc}
                 </p>
             </CardBody>
-            <CardFooter className="pt-1 flex justify-between">
+            <CardFooter className="pt-1 flex justify-between items-end h-full">
                 <div className="flex gap-3">
                     {project.demo_link && (
                         <Tooltip content="Demo" className="bg-mainColor dark:bg-gray-800 font-medium">
