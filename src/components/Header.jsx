@@ -64,9 +64,8 @@ const Main = () => {
                                     </Link>
                                 </div>
                             </div>
-                            <a href='' className='btn connect-btn'>
-                                Download CV
-                                {/* Let's Connect */}
+                            <a href='#contact' className='btn connect-btn'>
+                                Let's Connect
                                 <IoArrowForwardCircleOutline className='arrow-btn inline-block ml-2 text-2xl' />
                             </a>
                         </div>
