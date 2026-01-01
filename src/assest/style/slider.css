@@ -1,0 +1,16 @@
+:root {
+    color-scheme: light dark;
+    --slider-dot-color: #000;
+    --slider-active-dot-color: #000;
+}
+.dark {
+    --slider-dot-color: #d4d4d4;
+    --slider-active-dot-color: #fff;
+}
+.slick-dots li button:before {
+    color: var(--slider-dot-color)!important;
+}
+.slick-dots li.slick-active button:before {
+    color: var(--slider-active-dot-color)!important;
+    opacity: 1
+}

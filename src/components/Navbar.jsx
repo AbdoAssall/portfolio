@@ -106,6 +106,7 @@ const Navbar = () => {
                             <Bars3Icon aria-hidden="true" className="block h-6 w-6 group-data-[open]:hidden" />
                             <XMarkIcon aria-hidden="true" className="hidden h-6 w-6 group-data-[open]:block" />
                         </DisclosureButton>
+                        {/* Theme Switcher */}
                         <button
                             aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
                             className="flex items-center justify-center rounded-full p-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-themColor"
@@ -114,12 +115,12 @@ const Navbar = () => {
                             {theme === "dark" ? (
                                 <div className="flex items-center">
                                     <FaSun className="text-amber-400 text-xl md:text-2xl" />
-                                    <span className="ml-2 text-sm text-gray-300 md:hidden">Light Mode</span>
+                                    <span className="ml-2 text-sm text-gray-300 hidden sm:block">Light Mode</span>
                                 </div>
                             ) : (
                                 <div className="flex items-center">
                                     <FaMoon className="text-mainColor text-xl md:text-2xl" />
-                                    <span className="ml-2 text-sm text-gray-700 md:hidden">Dark Mode</span>
+                                    <span className="ml-2 text-sm text-gray-700 hidden sm:block">Dark Mode</span>
                                 </div>
                             )}
                         </button>
@@ -130,13 +131,13 @@ const Navbar = () => {
                             <img
                                 alt="abdoassal"
                                 src="./images/logo-dark2.png"
-                                className="w-56 md:w-60 lg:w-65 h-auto"
+                                className="w-50 sm:w-56 md:w-60 lg:w-65 h-auto"
                             />
                         ) : (
                             <img
                                 alt="abdoassal"
                                 src="./images/logo-light.png"
-                                className="w-56 md:w-60 lg:w-65 h-auto"
+                                className="w-46 sm:w-56 md:w-60 lg:w-65 h-auto"
                             />
                         )}
                     </div>
@@ -255,6 +256,23 @@ const Navbar = () => {
                             {item.name}
                         </DisclosureButton>
                     ))}
+                     <button
+                            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+                            className="flex items-center justify-center rounded-full mt-3 p-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-themColor"
+                            onClick={toggleTheme}
+                        >
+                            {theme === "dark" ? (
+                                <div className="flex items-center">
+                                    <FaSun className="text-amber-400 text-xl md:text-2xl" />
+                                    <span className="ml-2 text-sm text-gray-300 md:hidden">Light Mode</span>
+                                </div>
+                            ) : (
+                                <div className="flex items-center">
+                                    <FaMoon className="text-mainColor text-xl md:text-2xl" />
+                                    <span className="ml-2 text-sm text-gray-700 md:hidden">Dark Mode</span>
+                                </div>
+                            )}
+                        </button>
                     <div className="mt-3 mb-6">
                         <Link
                             to="https://github.com/AbdoAssall"

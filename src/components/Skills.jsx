@@ -31,14 +31,14 @@ const Skills = () => {
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3,
-                    infinite: false,
+                    infinite: true,
                 },
             },
             {
                 breakpoint: 960,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
                 },
             },
             {
@@ -70,39 +70,39 @@ const Skills = () => {
                     <div className="px-6 mx-aut mt-16">
                         <Slider {...settings}>
                             <div className="text-center">
-                                <img src="/images/logos/html5.svg" className="w-auto sm:w-auto !h-22 md:!h-25 object-cover mx-auto" alt="logo" loading="lazy" />
+                                <img src="/images/logos/html5.svg" className="w-18 sm:w-auto !h-16 sm:!h-25 object-fill mx-auto" alt="logo" loading="lazy" />
                                 <h3 className="!text-darkColor dark:!text-white text-lg capitalize mt-2">HTML5</h3>
                             </div>
                             <div className="text-center">
-                                <img src="/images/logos/css3.svg" className="w-auto sm:w-auto !h-22 md:!h-25 object-cover mx-auto" alt="logo" loading="lazy" />
+                                <img src="/images/logos/css3.svg" className="w-18 sm:w-auto !h-16 sm:!h-25 object-fill mx-auto" alt="logo" loading="lazy" />
                                 <h3 className="!text-darkColor dark:!text-white text-lg capitalize mt-2">CSS3</h3>
                             </div>
                             <div className="text-center">
-                                <img src="/images/logos/js.svg" className="w-auto sm:w-auto !h-22 md:!h-25 object-cover mx-auto" alt="logo" loading="lazy" />
+                                <img src="/images/logos/js.svg" className="w-18 sm:w-auto !h-16 sm:!h-25 object-fill mx-auto" alt="logo" loading="lazy" />
                                 <h3 className="!text-darkColor dark:!text-white text-lg capitalize mt-2">JavaScript</h3>
                             </div>
                             <div className="text-center">
-                                <img src="/images/logos/react.svg" className="w-auto !h-22 md:!h-25 object-cover mx-auto" alt="logo" loading="lazy" />
+                                <img src="/images/logos/react.svg" className="w-18 sm:w-auto !h-16 sm:!h-25 object-fill mx-auto" alt="logo" loading="lazy" />
                                 <h3 className="!text-darkColor dark:!text-white text-lg capitalize">react</h3>
                             </div>
                             <div className="text-center">
-                                <img src="/images/logos/laravel.svg" className="w-auto sm:w-auto !h-22 md:!h-25 object-cover mx-auto" alt="logo" loading="lazy" />
+                                <img src="/images/logos/laravel.svg" className="w-18 sm:w-auto !h-16 sm:!h-25 object-fill mx-auto" alt="logo" loading="lazy" />
                                 <h3 className="!text-darkColor dark:!text-white text-lg capitalize mt-2">laravel</h3>
                             </div>
                             <div className="text-center">
-                                <img src="/images/logos/mysql.svg" className="w-auto sm:w-auto !h-22 md:!h-25 object-cover mx-auto" alt="logo" loading="lazy" />
+                                <img src="/images/logos/mysql.svg" className="w-18 sm:w-auto !h-16 sm:!h-25 object-fill mx-auto" alt="logo" loading="lazy" />
                                 <h3 className="!text-darkColor dark:!text-white text-lg capitalize mt-2">mySql</h3>
                             </div>
                             <div className="text-center">
-                                <img src="/images/logos/bootstrap.svg" className="w-auto sm:w-auto !h-22 md:!h-25 object-cover mx-auto" alt="logo" loading="lazy" />
+                                <img src="/images/logos/bootstrap.svg" className="w-18 sm:w-auto !h-16 sm:!h-25 object-fill mx-auto" alt="logo" loading="lazy" />
                                 <h3 className="!text-darkColor dark:!text-white text-lg capitalize mt-2">bootstrap</h3>
                             </div>
                             <div className="text-center">
-                                <img src="/images/logos/tailwindcss.svg" className="w-auto sm:w-auto !h-22 md:!h-25 object-cover mx-auto" alt="logo" loading="lazy" />
+                                <img src="/images/logos/tailwindcss.svg" className="w-18 sm:w-auto !h-16 sm:!h-25 object-fill mx-auto" alt="logo" loading="lazy" />
                                 <h3 className="!text-darkColor dark:!text-white text-lg capitalize mt-2">tailwindCss</h3>
                             </div>
                             <div className="text-center">
-                                <img src="/images/logos/sass.svg" className="w-auto sm:w-auto !h-22 md:!h-25 object-cover mx-auto" alt="logo" loading="lazy" />
+                                <img src="/images/logos/sass.svg" className="w-18 sm:w-auto !h-16 sm:!h-25 object-fill mx-auto" alt="logo" loading="lazy" />
                                 <h3 className="!text-darkColor dark:!text-white text-lg capitalize mt-2">Sass</h3>
                             </div>
                         </Slider>
