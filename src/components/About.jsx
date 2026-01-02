@@ -84,7 +84,7 @@ const About = () => {
                             Hello! I'm <strong>Abdelrahman Assal</strong>, a Frontend Engineer and Network Engineer from Egypt, specializing in building modern, responsive, and high-performance web applications.
                         </p>
 
-                        <p className="!text-secondary dark:!text-gray-300 mb-8 leading-relaxed">
+                        <p className="!text-dark-300 dark:!text-gray-300 mb-8 leading-relaxed">
                             I combine frontend engineering with a solid background in network infrastructure and IT. This allows me to not only design clean, interactive user interfaces using <strong>React.js</strong> and <strong>Tailwind CSS</strong>, but also optimize performance, enhance security, and ensure reliable deployment through efficient server, DNS, and CDN configurations.
                         </p>
 
@@ -115,7 +115,7 @@ const About = () => {
                             • Digital Marketing & WordPress Development.
                         </p> */}
 
-                        <p className="!text-secondary dark:!text-gray-300 leading-relaxed">
+                        <p className="!text-dark-300 dark:!text-gray-300 leading-relaxed">
                             My goal is to deliver software solutions that are not only efficient, but also fast, secure, scalable,
                             and built for growth. I’m always ready to contribute to projects that demand engineering precision
                             and creative problem-solving.
@@ -129,7 +129,7 @@ const About = () => {
                         </p> */}
 
                         {/* Stats Grid */}
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-5 mb-8">
                             <StatCard number="10+" label="Projects Done" />
                             <StatCard number="100%" label="Satisfaction" />
                             <StatCard number="24/7" label="Support" className="col-span-2 md:col-span-1" />
@@ -139,7 +139,7 @@ const About = () => {
                         <div className="mb-8">
                             <p className="text-sm font-bold text-darkColor dark:text-white mb-3 uppercase tracking-wide">Tech Stack</p>
                             <div className="flex flex-wrap gap-2">
-                                {['React.js', 'Tailwind CSS', 'JavaScript (ES6+)', 'Git'].map((tech) => (
+                                {['React.js', 'Laravel','Tailwind CSS', 'JavaScript (ES6+)', 'Git'].map((tech) => (
                                     <span key={tech} className="px-3 py-1.5 text-sm rounded-md bg-white dark:bg-dark-100 border border-gray-350 dark:border-dark-300 !text-secondary">
                                         {tech}
                                     </span>
@@ -149,8 +149,9 @@ const About = () => {
 
                         {/* CTA Button */}
                         <a
-                            href=""
+                            href="https://storge.scopehub.net/myfiles/Abdelrahman-Assal-Frontend-Developer.pdf"
                             className="btn connect-btn !pt-3.5 hover:scale-105 transform transition-transform shadow-[0_10px_20px_-10px_rgba(98,41,207,0.5)] hover:shadow-[0_15px_25px_-10px_rgba(98,41,207,0.6)]"
+                            target='_blank'
                         >
                             Download CV
                         </a>
